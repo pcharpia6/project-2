@@ -60,6 +60,9 @@ Katie:
         ii. Input box - Video Name
         iii. Input box - Game Name
         iv. Checkboxes - Coaching Request, Brag, Contributor reviews...
+    e. Contributor.coachreview
+        i. Text box readout of coaches' comments on video
+        ii. Dropdown of -3 to +3 to value coaches feedback and provide DINGbucks to coaches
 
 4. Coach: 
     a. Coach Main Screen
@@ -71,8 +74,61 @@ Katie:
     b. Coach.coach
         i. Default YouTube video changes to video selected on link
         ii. An input box opens up at bottom of page for text feedback on video
-        iii. A drop-down is provided to score a game -5 to +5 to provide scores to the poster
+        iii. A drop-down is provided to score a game -5 to +5 to provide DINGbucks to the poster
     c. Coach.search
         i. See contributor.search (3.c)
     d. Coach.upload
         i. See contributor.upload (3.d)
+
+### Data
+1. Structure:
+    a. Users Table
+        i. User Name
+        ii. User Role
+        iii. Belt Level
+        iv. DING-bucks
+        v. Password? {{ How do we do auth? }}
+        vi. ID
+        vii. Preferences:
+            1. Game Name
+            2. Game Type
+    b. Videos Table
+        i. ID
+        ii. Video Name
+        iii. Game Name
+        iv. URL
+        v. User ID
+        vi. Description
+        vii. Response Request
+            1. Coach Feedback
+            2. Brag
+            3. Contributer Feedback
+            4. Don't Be Like Me
+        viii. Coach review text
+        ix. Coach Review Value
+
+2. Routing:
+    a. Contributor
+        i. /:username/ - main view by user.role
+        ii. /:username/view/:id/ - contributor.view showing video from clicked button
+        iii. /:username/search/?q={input}+{input}+etc... - return buttons for videos matching input
+        iv. /:username/upload/ - contributor.upload with the 4 inputs
+        v. /:username/vidrev/:id/
+    b. Coach
+        i. /:username/ - main view by user.role
+        ii. /:username/view/:id/ - contributor.view showing video from clicked button
+        iii. /:username/search/?q={input}+{input}+etc... - return buttons for videos matching input
+        iv. /:username/upload/ - contributor.upload with the 4 inputs
+        v. /:username/coach/:id/ - coach.coach view to provide feedback and value earned
+
+### Models/Sequelize
+1. Index
+2. Video
+3. Coach Review
+4. Contributor Post
+5. Contributor Coach Review
+6. Search
+7. User
+
+### Javascript
+1. 
