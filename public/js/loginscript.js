@@ -5,7 +5,6 @@ $('#modal-button').click(function(e){
 });
 
 function slideOpen(){
-    //$('#tada').load("https://jernical.github.io/Ding-su/");
     $('#stage').css({"justify-content": "space-between"});
     $('#rtdoor').animate({'left':'100%'}, "slow");
     $('#ltdoor').animate({'right':'100%'}, "slow");
@@ -22,6 +21,6 @@ function zoomStage(){
 
 function loadFullSite(){
     $('body').fadeOut(500, function(){
-        window.location = 'https://jernical.github.io/Ding-su/'
+        window.location = '../Dojo-Main/index.html'
     });
 };
