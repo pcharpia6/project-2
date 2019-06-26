@@ -22,6 +22,6 @@ function zoomStage(){
 
 function loadFullSite(){
     $('body').fadeOut(500, function(){
-        window.location = 'https://jernical.github.io/Ding-su/'
+        window.location = '../../Dojo-Main/index.html'
     });
 };
