@@ -5,6 +5,9 @@ body{
 #myModal{
     
 }
+.writing{
+    font-family: 'Rock Salt', cursive;
+}
 .modal-content {
     position: absolute;
     left: 120px;
