@@ -1,19 +1,42 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
+var $userName = $("#user-name");
+var $description = $("#description");
+var $userSubmitBtn = $("#user-submit");
 var $exampleList = $("#example-list");
+
+// Create a new user
+var newUserSubmit = function(event) {
+  event.preventDefault();
+
+  var userSubmit = {
+    $userName: $exampleText.val().trim(),
+    $description: $exampleDescription.val().trim()
+  };
+
+  if (!(userSubmit.$userName && userSubmit.$description)) {
+    alert("You must enter a user name and description!");
+    return;
+  }
+
+  API.saveUser(userSubmit).then(function() {
+    // modal for confirmation of submission?
+  });
+
+  $userName.val("");
+  $description.val("");
+};
+
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  saveUser: function(userData) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
+      url: "api/users",
+      data: JSON.stringify(userData)
     });
   },
   getExamples: function() {

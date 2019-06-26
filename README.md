@@ -89,7 +89,7 @@ Katie:
         iv. DING-bucks
         v. Password? {{ How do we do auth? }}
         vi. ID
-        vii. Preferences:
+        vii. Preferences?:
             1. Game Name
             2. Game Type
     b. Videos Table
