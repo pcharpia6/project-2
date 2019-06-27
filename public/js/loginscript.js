@@ -21,10 +21,6 @@ function zoomStage(){
 
 function loadFullSite(){
     $('body').fadeOut(500, function(){
-<<<<<<< HEAD
-        window.location = '../Dojo-Main/index.html'
-=======
         window.location = '../../Dojo-Main/index.html'
->>>>>>> 7466fe1ff6070e0d7ad1ddff91ba958f223c8a13
     });
 };
