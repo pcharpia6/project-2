@@ -1,0 +1,27 @@
+.page-header {
+  text-align: center;
+  color: white;
+}
+
+body {
+  background: grey;
+}
+
+.thumbnail {
+  background-color: black;
+  color: white;
+}
+
+.gamePic {
+  padding-left: 10px;
+}
+
+img {
+  padding-top: 10px;
+  border-radius: 20px;
+}
+
+.gameTitle {
+  font-size: 27px;
+}
+
