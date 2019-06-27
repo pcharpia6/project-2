@@ -1,7 +1,19 @@
-console.log('Running');
-$('#modal-button').click(function(e){
+
+$('.modal-button').click(function(e){
+    if (this.id === 'guest'){
     $('#myModal').fadeOut(slideOpen());
+    }
+    else{
+        renderLoginChoices();
+    }
 });
+
+function renderLoginChoices(){
+    $('.modal-body').html('<p class="rock-salt"> Great! Are you a...</p>');
+    $('.modal-footer').html('<button class="modal-button rock-salt" type="button" id="new-user">New User</button>');
+    $('.modal-footer').append('<p class="rock-salt">Or</p>')
+    $('.modal-footer').append('<button class="modal-button rock-salt" type="button" id="returning-user">Returning User</button>');
+}
 
 function slideOpen(){
     $('#stage').css({"justify-content": "space-between"});
@@ -10,16 +22,22 @@ function slideOpen(){
     zoomStage();
 };
 
+
 function zoomStage(){
-    $('#stage').animate({'width': '100vw', 'height': '100vh'});
-    $('#tada').animate({'width': '100vw', 'height': '100vh'});
-    $('#theater-container').animate({'margin': '0 auto', 'width': '100vw', 'height': '100vh'});
-    $('body').animate({'margin': '0px'});
-    loadFullSite();
+    $('#stage').animate({'width': '100vw', 'height': '100vh'}, 'slow');
+    $('#tada').animate({'width': '100vw', 'height': '100vh'}, 'slow');
+    $('#theater-container').animate({'margin': '0 auto', 'width': '100vw', 'height': '100vh'}, 'slow');
+    $('body').css({'margin': '0px'});
+    waitForTheNext();
+};
+
+function waitForTheNext(){
+    var waitForLoad;
+    waitForLoad = setTimeout(loadFullSite, 1000);
 };
 
 function loadFullSite(){
     $('body').fadeOut(500, function(){
-        window.location = '../../Dojo-Main/index.html'
+        window.location = './main.html';
     });
 };
