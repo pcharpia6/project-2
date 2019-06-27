@@ -1,0 +1,86 @@
+.shojumaru{
+    font-family: 'Shojumaru', cursive;
+    color: red;
+    text-shadow: black 5px 2px 2px, 0 0 0.5em orange, 0 0 0.5em orange,
+    0 0 0.5em orange;
+}
+.rock-salt{
+    font-family: 'Rock Salt', cursive;
+    margin: 3px;
+}
+body{
+    display: none;
+    margin: 0px;
+    background-color: black;
+}
+#grid-container{
+    display: grid;
+    top: 0px;
+    height: 100vh;
+    width: 100vw;
+    grid-template-rows: 10% 100%;
+}
+#title-bar{
+    grid-row-start: 1;
+    grid-row-end: 1;
+    background-color: black;
+    border: 1px double #EFE3AF;
+}
+#title-text{
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    margin-left: 100%;
+}
+#title{
+    grid-row-start: 1;
+    grid-row-end: 2;
+    margin-left: 5%;
+}
+#menu{
+    text-align: center;
+    justify-content: center;
+    color: white;
+    margin-right: 5%;
+    display: flex;
+    flex-direction: column;
+}
+#menu p:hover{
+    text-shadow: 0 0 0.5em orange, 0 0 0.5em orange,
+    0 0 0.5em orange;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    transition: text-shadow .6s;
+}
+
+a:hover{
+    text-shadow: 0 0 0.5em orange, 0 0 0.5em orange,
+    0 0 0.5em orange;
+}
+
+#main-stage{
+    grid-row-start: 2;
+    grid-row-end: 2;
+    display: grid;
+    grid-template-columns: 10% 60% 10% 10% 10%;
+    grid-template-rows: 10% 75% 15%;
+    background-image: url('../images/indoor-dojo-temple-vector.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#site-menu{
+    display: none;
+    color: white;
+}
+
+#main-site{
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background-color: white;
+}

@@ -1,24 +1,37 @@
 body{
-    background-color: black;
+    background-image: url('../images/wall.jpg');
     text-align: center;
 }
 #myModal{
-    
 }
-.writing{
+.shojumaru{
+    font-family: 'Shojumaru', cursive;
+    color: red;
+    text-shadow: black 5px 2px 2px, 0 0 0.5em orange, 0 0 0.5em orange,
+    0 0 0.5em orange;
+}
+.rock-salt{
     font-family: 'Rock Salt', cursive;
 }
 .modal-content {
+    box-shadow: 2px 3px black;
     position: absolute;
     left: 120px;
     right: 120px;
     top: 120px;
-    background-color: #fefefe;
+    background-color: #EFE3AF;
     margin: auto;
+    width: 25%;
     padding: 20px;
-    border: 1px solid #888;
+    outline: 10px solid #6E1B00;
+    border: 2px inset black;
     height: 40vh;
     z-index: 5;
+  }
+  button{
+      background-color: #6E1B00;
+      color: #EFE3AF;
+      text-shadow: black 2px 2px 2px
   }
   #theater-container{
       margin: 15% auto;
@@ -53,8 +66,11 @@ body{
    position: relative;
    height: 100%;
   }
-
-  .center{
+  .center-horizontally{
+    margin: auto;
+    position: relative;
+  }
+  .center-both{
       margin: auto;
       position: relative;
       top: 50%;
