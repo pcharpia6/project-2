@@ -1,0 +1,37 @@
+<html ng-app="topGames">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Page Title -->
+    <title>Ding-su</title>
+
+    <!-- Responsive Metatag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+<!-- from main end -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="topGames.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+  </head>
+
+  <body class="container" ng-controller="twitch">
+    <div class="container">
+      <div class="page-header">
+        <h1>Top Games being Coached right now!</h1>
+        <h2>Get ahead of the game right now!</h2>
+
+      </div>
+    </div>
+    <div ng-repeat="game in games track by $index">
+      <div class="row">
+          <div class="thumbnail">
+            <img class="gamePic" ng-src="{{ game.game.box.medium }}" />
+              <div class="gameTitle">{{ game.game.name }}</div>
+              total viewers : {{ game.viewers }}
+          </div>
+      </div>
+    </div>
+
+</body>
+</html>
