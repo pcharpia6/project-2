@@ -96,7 +96,7 @@ Katie:
         i. ID
         ii. Video Name
         iii. Game Name
-        iv. URL
+        iv. URL  {{ "?v=" + %%%%% or split() -11 }} 
         v. User ID
         vi. Description
         vii. Response Request
@@ -104,8 +104,15 @@ Katie:
             2. Brag
             3. Contributer Feedback
             4. Don't Be Like Me
-        viii. Coach review text
-        ix. Coach Review Value
+    c. Coach Review
+        i. Coach review text
+        ii. Coach Review Value
+    d. Contributor Review
+        i. Contributor review text
+        ii. Contritubor review value?
+    e. Contributor Review of Coach Review
+        i. Contributor review text
+        ii. Contributor value of coach review
 
 2. Routing:
     a. Contributor

@@ -1,7 +1,41 @@
 module.exports = function(sequelize, DataTypes) {
-  var Example = sequelize.define("Example", {
-    text: DataTypes.STRING,
-    description: DataTypes.TEXT
+  var Video = sequelize.define("contributorPost", {
+    video_url: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isURL: true,
+        contains: "youtu.be"
+      }
+    },
+    video_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [2, 256]
+      }
+    },
+    game_name: {
+      type: DataType.STRING,
+      allowNull: false
+    },
+    genre: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+        len: [
+          [5, 1000]
+        ]
+      }
+    },
+    coach_request: {
+      type: DataTypes.BOOLEAN
+    }
+
   });
-  return Example;
+  return Video;
 };
