@@ -23,13 +23,16 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    comment: {
+    description: {
       type: DataTypes.TEXT,
       allowNull: false,
       validate: {
-
+        len: [
+          [5, 1000]
+        ]
       }
-    }
+    },
+    
   });
   return Example;
 };

@@ -96,7 +96,7 @@ Katie:
         i. ID
         ii. Video Name
         iii. Game Name
-        iv. URL
+        iv. URL  {{ "?v=" + %%%%% or split() -11 }} 
         v. User ID
         vi. Description
         vii. Response Request
