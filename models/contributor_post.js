@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var contributorPost = sequelize.define("contributorPost", {
+  var Video = sequelize.define("contributorPost", {
     video_url: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -19,7 +19,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataType.STRING,
       allowNull: false
     },
-    game_type: {
+    genre: {
       type: DataTypes.STRING,
       allowNull: false
     },
@@ -32,7 +32,10 @@ module.exports = function(sequelize, DataTypes) {
         ]
       }
     },
-    
+    coach_request: {
+      type: DataTypes.BOOLEAN
+    }
+
   });
-  return Example;
+  return Video;
 };
