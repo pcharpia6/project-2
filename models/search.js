@@ -5,5 +5,3 @@ module.exports = function(sequelize, DataTypes) {
   });
   return Example;
 };
-
-// Search.like
