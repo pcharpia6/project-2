@@ -20,6 +20,7 @@ var newUserSubmit = function(event) {
 
   API.saveUser(userSubmit).then(function() {
     // modal for confirmation of submission?
+    
   });
 
   $userName.val("");

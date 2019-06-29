@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "IronBreaker0^",
-    "database": "dingdb",
-    "host": "localhost",
+    "username": "mya12b255c9d8l5k",
+    "password": "w9t13s85xzhm65zb",
+    "database": "kzl0z69ljolzo6co",
+    "host": "op2hpcwcbxb1t4z9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <title>D!ng-Search</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../css/search.css">
+        <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="topnav">
+            <a class="active" href="#home">Home</a>
+            <a href="#news">News</a>
+            <a href="#search">Search</a>
+            <a href="#about">About</a>
+          </div> 
+          <br>
+          <br>
+          <div class="dropdown">
+            <button onclick="genreSearch()" class="dropbtn1">Genres</button>
+            <div id="myDropdown" class="dropdown1-content">
+                    <select name="genre" size="6" multiple>
+                        <option value="FPS">First Person Shooter</option>
+                        <option value="RPG">Role-playing Game</option>
+                        <option value="MMORPG">Mass Multiplayer Online Role-playing</option>
+                        <option value="Racing">Racing</option>
+                        <option value="Survival">Survival</option>
+                        <option value="BR">Battle Royale</option>
+              </select>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="dropdown">
+            <button onclick="gameSearch()" class="dropbtn2">Games</button>
+            <div id="myDropdown2" class="dropdown2-content">
+              <select name="games" size="8" multiple>
+                  <option value="COD">Call Of Duty</option>
+                <option value="Fortnite">Fortnite</option>
+              <option value="PUBG">PUBG</option>
+              <option value="BF">Battlefield</option>
+              <option value="OL">Outlast</option>
+              <option value="Skyrim">Skyrim</option>
+              <option value="TLU">The Last Of Us</option>
+              <option value="GTA">GTA</option>
+              
+            </select>
+            </div>
+          </div>  
+         
+          <script src="../js/search.js"></script>
+    </body>
+</html>
