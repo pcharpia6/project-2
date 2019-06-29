@@ -1,36 +1,45 @@
 module.exports = function(sequelize, DataTypes) {
-
   var Video = sequelize.define("video", {
-    videoName: {
+    video_url: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [2, 64]
-      }},
-    gameName: {
+        isURL: true,
+        contains: "youtu.be"
+      }
+    },
+    video_name: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [2, 64]
-      }},
-    videoType: {
+        len: [2, 256]
+      }
+    },
+    game_name: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    userId: {
-      type: DataTypes.INTEGER,
+    genre: {
+      type: DataTypes.STRING,
       allowNull: false
+    },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+        len: [5, 1000]
+      }
+    },
+    coach_request: {
+      type: DataTypes.BOOLEAN
     }
   });
 
   Video.associate = function(models) {
-    Video.belongsTo(models.User, {
-      foreignKey: {
-        allowNull: false
-      }
+    Video.belongsTo(models.user, {
+      foreignKey: "userId", as: "User"
     });
   };
 
   return Video;
-
 };
