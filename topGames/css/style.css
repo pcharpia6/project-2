@@ -1,0 +1,77 @@
+.page-header {
+  text-align:center;
+  color:black;
+  font-family: 'Shojumaru', cursive;
+}
+
+body {
+  background:linear-gradient(150deg, wheat,#6E1B00);
+}
+
+.thumbnail {
+  background:linear-gradient(150deg, wheat,#6E1B00);
+  font-family: 'Righteous', cursive;
+}
+
+.gamePic {
+  padding-left:10px;
+}
+
+.caption {
+  padding-left: 10px;
+  font-size: 18px;
+  font-family:'Shojumaru', cursive;
+}
+
+img { 
+  padding-top:10px;
+  border-radius:20px;
+}
+
+.gameTitle {
+  font-size:27px;
+}
+
+.streamerName {
+  font-size:20px;
+  font-family: 'Shojumaru', cursive;
+  color:black;
+  font-family: 'Shojumaru', cursive;
+
+}
+
+.streamerLogo {
+  height:30%;
+  width:30%;
+  border-radius:25px;
+}
+
+tbody {
+  padding:10px;
+}
+
+td {
+  font-family: 'Shojumaru', cursive;
+  color:black;
+}
+
+
+a:link {
+  color: black;
+}
+
+a:visited {
+  
+  color:purple;
+  
+}
+
+a:hover {
+  
+  color:#A426ED;
+  
+}
+
+.col-sm-4 {
+  padding-right:50px;
+}
