@@ -1,5 +1,4 @@
-//it takes the top games from twitch.tv using their api
-//then gets the streamers of those games
+//it takes the top games from twitch.tv using their ap
 
 $(document).ready(function () {
 
