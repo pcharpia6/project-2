@@ -1,5 +1,3 @@
-//it takes the top games from twitch.tv using their ap
-
 $(document).ready(function () {
 
   var app = angular.module("topGames", []);
@@ -7,6 +5,7 @@ $(document).ready(function () {
   app.controller("twitch", ["$scope", "$http", function ($scope, $http) {
 
     $scope.games;
+    $scope.streamers = [];
 
     $http.get("https://api.twitch.tv/kraken/games/top?client_id=swheeu8yk5hiqgcgo69m58amq5ynn5").success(function (topGames) {
 
@@ -19,9 +18,12 @@ $(document).ready(function () {
 
         gameQuery = gameQuery.replace("&", "%26");
 
-        $http.get("https://api.twitch.tv/kraken/streams?client_id=&=" + gameQuery).success(function (games) {
+        $http.get("https://api.twitch.tv/kraken/streams?client_id=swheeu8yk5hiqgcgo69m58amq5ynn5&game=" + gameQuery).success(function (streamers) {
 
-          $scope.games.push();
+          $scope.streamers.push({
+            game: streamers.streams[0].game,
+            streams: streamers.streams.slice(0, 3)
+          });
 
         });
 
@@ -31,6 +33,13 @@ $(document).ready(function () {
     });
 
 
-  }]);
 
-});
+
+
+
+  }]);//controller
+
+
+
+
+});//document ready
