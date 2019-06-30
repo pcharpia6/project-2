@@ -2,7 +2,7 @@ $('body').fadeIn(1000);
 
 $(document).ready(function() {
     $('#title-text').animate({'margin-left': '0'}, 'slow');
-    $('#current-data').attr('src', '../ding-su-video-player/index.html');
+    $('#current-data').attr('src', './videoplayer.html');
 });
 
 $('#menu').click(function(){
