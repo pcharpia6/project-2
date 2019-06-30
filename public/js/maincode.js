@@ -1,3 +1,5 @@
+
+
 $('body').fadeIn(1000);
 
 $(document).ready(function() {
@@ -8,4 +10,8 @@ $(document).ready(function() {
 $('#menu').click(function(){
     $('#site-menu').fadeIn(300);
     $('.menu-title').css({'border-bottom': '1px solid white'});
+});
+
+$('.about').click(function(){
+    $('#current-data').attr('src', 'aboutus.html');
 })
