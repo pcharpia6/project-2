@@ -14,13 +14,13 @@
     height: 100vh;
     width: 100vw;
     grid-template-rows: 10% 80% 10%;
+    background-color: black;
 }
 #movie-info{
     grid-row-start: 1;
     grid-row-end: 1;
     display: flex;
     justify-content: space-between;
-    background-color: black;
 }
 .info-box{
     margin: 2.5%;

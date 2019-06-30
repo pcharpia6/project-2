@@ -1,0 +1,16 @@
+body{
+    background-color: #EFE3AF;
+}
+
+.writing{
+    font-family: 'Rock Salt', cursive;
+    color: black;
+}
+
+#player{ 
+    width: 100%;
+}
+
+iframe:#player{
+    height: 75vh;
+}
