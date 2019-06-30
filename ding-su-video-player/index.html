@@ -5,66 +5,31 @@
     <title>Ding-su</title>
     <!-- Style imports for Material Design Lite -->
     <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="../public/styles/moviePageStyle.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link href="https://fonts.googleapis.com/css?family=Shojumaru&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet">
     <!-- This code loads the iFrame Player API code asynchronously.-->
     <script src = "https://www.youtube.com/iframe_api"></script>
     <!-- This is the source of the Javscript for the demo -->
     <script src="script.js"></script>
   </head>
   <body>
-    <!-- Header -->
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <header class="mdl-layout__header">
-          <div class="mdl-layout__header-row">
-            <!-- Title -->
-            <span class="mdl-layout-title">Ding-su</span>
-
-          </div>
-        </header>
-      <main class="mdl-layout__content">
-        <div class="mdl-grid">
-          <div class="mdl-cell mdl-cell--5-col">
-              
-            <div id="player"></div>
-          </div>
-          <div class="mdl-cell mdl-cell--5-col">
-            <!-- This table contains editable video on the video in the iframe -->
-            <table class="mdl-data-table">
-
-              <tr>
-                <td  class="mdl-data-table__cell--non-numeric">VideoID</td>
-                <td id="video_id"></td>
-                <td class="mdl-data-table__cell--non-numeric">
-                  <input id="video_idOption" type="text">
-                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onClick="loadNewVideo()">Load</button>
-                </td>
-              </tr>
-
-            </table>
-            </div>
+    <div class="grid-container">
+      <div id="movie-info">
+        <div id="movie-title" class="info-box">
+          <p class="shojumaru sub-title">Movie Title</p>
+      </div>
+        <div id="movie-author" class="info-box">
+          <p class="rock-salt sub-script white">Author</p>
         </div>
-        <div class="mdl-grid">
-          
-          <div class="mdl-cell mdl-cell--4-col">
-
-            <!-- This table contains metadata on the video in the iframe -->
-            <table class="mdl-data-table">
-
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric">Title</td>
-                <td id="title" class="mdl-data-table__cell--non-numeric"></td>
-              </tr>
-              
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric">Author</td>
-                <td id="author" class="mdl-data-table__cell--non-numeric"></td>
-              </tr>
-
-            </table>
-          </div>
-        </div>
-      </main>
+      </div>
+      <div id="player"></div>
+      <div id="search">
+        <label for="video_id" class="rock-salt white">Video ID
+        <input id="video_idOption" type="text">
+        <button class="submit rock-salt" onClick="loadNewVideo()">Load</button>
+      </div>
     </div>
   </body>
 </html>

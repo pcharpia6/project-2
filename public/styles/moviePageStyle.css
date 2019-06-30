@@ -1,0 +1,66 @@
+.shojumaru{
+    font-family: 'Shojumaru', cursive;
+    color: red;
+    text-shadow: black 5px 2px 2px, 0 0 0.5em orange, 0 0 0.5em orange,
+    0 0 0.5em orange;
+}
+.rock-salt{
+    font-family: 'Rock Salt', cursive;
+    margin: 3px;
+}
+.grid-container{
+    display: grid;
+    top: 0px;
+    height: 100vh;
+    width: 100vw;
+    grid-template-rows: 10% 80% 10%;
+    background-color: black;
+}
+#movie-info{
+    grid-row-start: 1;
+    grid-row-end: 1;
+    display: flex;
+    justify-content: space-between;
+}
+.info-box{
+    margin: 2.5%;
+    width: 25%;
+}
+.sub-title{
+    font-size: 30px;
+    text-align: center;
+}
+.sub-script{
+    text-shadow: 1px 1px #f29202;
+    font-size: 20px;
+    text-align: center;
+}
+iframe{
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+#search{
+    grid-row-start: 3;
+    grid-row-end: 3;
+}
+.white{
+    color: white;
+}
+button{
+    background:    #ff0000;
+    background:    linear-gradient(#ff0000, #3c2002);
+    border:        1px solid #000000;
+    border-radius: 5px;
+    box-shadow:    1px 1px #000000;
+    padding:       8px 20px;
+    color:         #f8f838;
+    display:       inline-block;
+    text-align:    center;
+    text-shadow:   1px 1px #f29202;
+}
+#search{
+    text-align: center;
+    text-shadow:   1px 1px #f29202;
+    background-color: black;
+}
+
