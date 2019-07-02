@@ -23,7 +23,7 @@
         "no-unused-vars": "error",
         "indent": [
             "error",
-            2
+            "tab"
         ],
         "quotes": [
             "error",
