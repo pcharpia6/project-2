@@ -3,8 +3,8 @@ var player;
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
     // Set Player height and width
-    height: '390',
-    width: '640',
+    height: '580',
+    width: '600',
     // Set the id of the video to be played
     videoId: 'Poa5O-MdePk',
     // Setup event handelers
