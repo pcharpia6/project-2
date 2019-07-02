@@ -44,11 +44,11 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  Video.associate = function(models) {
-    Video.belongsTo(models.User, {
-      foreignKey: "userId", as: "User"
-    });
-  };
+  // Video.associate = function(models) {
+  //   Video.belongsTo(models.User, {
+  //     foreignKey: "userId", as: "User"
+  //   });
+  // };
 
   return Video;
 };

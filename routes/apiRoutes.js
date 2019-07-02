@@ -15,12 +15,19 @@ module.exports = function(app) {
     });
   });
 
-  // // Delete an example by id
-  // app.delete("/api/examples/:id", function(req, res) {
-  //   db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-  //     res.json(dbExample);
-  //   });
-  // });
+  // Create a coach review
+  app.post("/api/coach-review", function(req, res) {
+    db.coachReview.create(req.body).then(function(dbCoachReview) {
+      res.json(dbCoachReview);
+    });
+  });
+
+  // Create a review of coach review
+  app.post("api/contributor-coach-review", function(req, res) {
+    db.contributorCoachReview.create(req.body).then(function(dbContributorCoachReview) {
+      res.json(dbContributorCoachReview);
+    });
+  });
 
   app.get("/api/gameName/:gameName", function(req, res) {
     db.Video.findAll({

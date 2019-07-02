@@ -1,7 +1,17 @@
 module.exports = function(sequelize, DataTypes) {
   var coachReview = sequelize.define("coachReview", {
-    Text: DataTypes.STRING,
-    Description: DataTypes.TEXT
+    userName: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    Description: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    Value: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    }
   });
   return coachReview;
 };
