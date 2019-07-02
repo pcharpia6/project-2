@@ -1,8 +1,11 @@
+
+
 console.log("I'm loaded!")
 function genreSearch(){
   var x = document.getElementById("myDropdown");
   console.log("Am i working?")
   console.log(x.style.visibility);
+  
   if (x.style.visibility==="hidden"){
    
     x.style.visibility = "visible";
@@ -11,62 +14,69 @@ function genreSearch(){
     x.style.visibility = "hidden";
   }
 
+
+};
   
-}
+
 console.log("I'm loaded!")
 function gameSearch(){
-  var y = document.getElementById("myDropdown2");
+  var page2 = document.getElementById("myDropdown2");
   console.log("Am i working?")
-  console.log(y.style.visibility);
-  if (y.style.visibility==="hidden"){
+  console.log(page2.style.visibility);
+  if (page2.style.visibility==="hidden"){
    
-    y.style.visibility = "visible";
+    page2.style.visibility = "visible";
 
   }else{
-    y.style.visibility = "hidden";
+    page2.style.visibility = "hidden";
   }
 
 
 };
-// module.exports = function(sequelize, DataTypes) {
-//   var Example = sequelize.define("Example", {
-//     text: DataTypes.STRING,
-//     description: DataTypes.TEXT
-//   });
-//   return Example;
-// };
+$("#myDropdown2 option").on("click", function(event){
+console.log( $(this).val(), "yello!");
+ 
+$("#myDropdown select").css({"display":"none"});
+  // $("#myDropdown select").prop("disabled", "disabled");
 
-// // Search.like
-var path = require ("path");
-var Sequelize = require("sequelize");
-var env = process.env.NODE_ENV || "development";
-var config = require(__dirname +"/../config/config.json")[env];
-var db = {};
+  $.ajax("/api/videos/byName/"+$(this).val()).done(function(res){
+    
+  });
 
-if(config.use_env_variable){
-  var sequelize = new Sequelize(process.env[config.use_env_variable]);
-}else{
-  var sequelize= new Sequelize(config.database, config.genreSearch, config.gameSearch, config);
-
-}
-
-fs
-.readdirSync(__dirname)
-.filter(function(choices){
-  return(choices.indexOf(".") !==0)&&( choices !==basename) && (choices.slice(-3)===".js");
-})
-.forEach(function(choices){
-  var model = sequelize["import"](path.join(__dirname,choices));
-  db[model.name] = model;
-})
-
-Object.keys(db).forEach(function(ModelName){
-  if(db[ModelName].associate){
-    db[ModelName].associate(db);
-  }
+});
+$(function() {
+  $("#myDropdown").change(function() {
+      if ($(this).val() == true) {
+          $("#myDropdown2").prop("disabled", true);
+      }
+      else
+          $("#myDropdown2").prop("disabled", false);
+  });
 });
 
-db.sequelize = sequelize;
-db.Sequelize = Sequelize;
+$(function(){
+  $("#myDropdown2").change(function(){
+    if($(this).val()===true){
+      $("myDropdown").prop("disabled", true);
+    }
+    else
+    $("#myDropdown").prop("disabled",false);
+  });
+});
 
-module.exports = db;
+$("#myDropdown2 option").on("click", function(event){
+  console.log( $(this).val());
+    $(this).val();
+    $.ajax("/api/genre/:genre/"+$(this).val()).done(function(res){
+      
+    });
+  
+  });
+  $("myDropdown option").on("click", function(event){
+    console.log($(this).val());
+    $(this).val();
+    $.ajax("/api/gameName/:gameName"+$(this).val()).done(function(res){
+      
+    })
+  })
+// Search.like
