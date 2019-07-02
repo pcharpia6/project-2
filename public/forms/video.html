@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Game Submission</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <form>
+            Url:<input type="url" name="videLink" id="url" placeholder="http://www.yourUrlhere.com"
+            pattern="http://www." size="60" required>
+            <br>
+            <br>
+            Video Name: <input type="text" name="video" placeholder="Video Name">
+            <br>
+            <br>
+            Game Name: <select placeholder="games">
+                <option value="" disabled selected>--Games--</option>
+                <option value="COD">Call Of Duty</option>
+                <option value="FN">Fortnite</option>
+                <option value="PUBG">PUBG</option>
+                <option value="BF">BattleField</option>
+                <option value="OL">Outlast</option>
+                <option value="Skyrim">Skyrim</option>
+                <option value="TLOU">The Last Of Us</option>
+                <option value="GTA">Grand Theft Auto</option>
+            </select> 
+            <br>
+            <br>
+            Game Genre <select placeholder="genre">
+                <option value="" disabled selected>--Genre--</option>
+                <option value="RPG">RPG</option>
+                <option value="Survival">Survival</option>
+                <option value="FPS">FPS</option>
+                <option value="Racing">Racing</option>
+                <option value="MMORPG">MMORPG</option>
+                <option value="BR">Battle Royale</option>
+            </select>
+            <br>
+            <br>
+          <textarea rows="15" cols="100" placeholder="description"></textarea>
+          <br>
+          <br>
+          Looking for: <fieldset id="choices">
+              <input type="radio" value="coach_Request"> Request a Coach
+              <input type="radio" value="dont_be_like_me"> Lols for fails
+              <input type="radio" value="brag"> Bragging Rights
+              <input type="radio" value="contributor_Feedback">Contributor Feedback 
+          </fieldset>
+          <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
