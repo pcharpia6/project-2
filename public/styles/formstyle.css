@@ -1,0 +1,55 @@
+body {
+    background:linear-gradient(150deg, wheat,#6E1B00);
+    height: 100vh;
+    width: 100vh;
+    background-size: cover;
+}
+
+form{
+    display: grid;
+    grid-template-columns: 65% 10% 10% 15%;
+    grid-template-rows: 90% 10%;
+}
+
+#inputs{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+#buttons{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
+label{
+    font-family: 'Shojumaru', cursive;
+    color: red;
+    text-shadow: black 5px 2px 2px, 0 0 0.5em orange, 0 0 0.5em orange,
+    0 0 0.5em orange;
+    font-size: 30px;
+}
+
+input{
+    background-color: #EFE3AF;
+    color: #6E1B00;
+    font-family: 'Indie Flower', cursive;
+    font-weight: bold;
+    font-size: 22px;
+    height: 30px;
+    margin: 20px;
+}
+
+button{
+    background-color: #6E1B00;
+    color: #EFE3AF;
+    text-shadow: black 2px 2px 2px;
+    font-family: 'Rock Salt', cursive;
+    margin: 3px;
+    font-size: 15px;
+    padding: 15px;
+    border-radius: 28%;
+}
