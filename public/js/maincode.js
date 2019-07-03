@@ -14,4 +14,12 @@ $('#menu').click(function(){
 
 $('.about').click(function(){
     $('#current-data').attr('src', 'aboutus.html');
-})
+});
+
+$('.games').click(function(){
+    $('#current-data').attr('src', './topGames/popularTwitch.html');
+});
+
+$('.home').click(function(){
+    $('#current-data').attr('src', './videoplayer.html');
+});
