@@ -3,52 +3,69 @@
     <head>
         <title>Game Submission</title>
         <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Shojumaru&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../styles/formstyle.css">
     </head>
     <body>
-        <form>
-            Url:<input type="url" name="videLink" id="video-url" placeholder="http://www.youtu.be.com"
-            pattern="http://www." size="60" required>
-            <br>
-            <br>
-            Video Name: <input id="video-name" type="text" name="video" placeholder="Video Name">
-            <br>
-            <br>
-            Game Name: <select placeholder="games">
-                <option value="" disabled selected>--Games--</option>
-                <option value="Call Of Duty">Call Of Duty</option>
-                <option value="Fortnite">Fortnite</option>
-                <option value="PlayerUnknown's BattleGrounds">PlayerUnknown's BattleGrounds</option>
-                <option value="Battlefield">Battlefield</option>
-                <option value="Outlast">Outlast</option>
-                <option value="Skyrim">Skyrim</option>
-                <option value="The Last Of Us">The Last Of Us</option>
-                <option value="Grand Theft Auto">Grand Theft Auto</option>
-            </select> 
-            <br>
-            <br>
-            Game Genre <select placeholder="genre">
-                <option value="" disabled selected>--Genre--</option>
-                <option value="RPG">RPG</option>
-                <option value="Survival">Survival</option>
-                <option value="FPS">FPS</option>
-                <option value="Racing">Racing</option>
-                <option value="MMORPG">MMORPG</option>
-                <option value="Battle Royale">Battle Royale</option>
-            </select>
-            <br>
-            <br>
-          <textarea rows="10" cols="100" placeholder="description"></textarea>
-          <br>
-          <br>
-          Looking for: <fieldset id="choices">
-              <input id="coach-request" type="radio" value="coach-request"> Request a Coach
-              <input id="dont-be-like-me" type="radio" value="dont-be-like-me"> Lols for fails
-              <input id="brag" type="radio" value="brag"> Bragging Rights
-              <input id="contributor-feedback" type="radio" value="contributor-feedback">Contributor Feedback 
-          </fieldset>
-          <input id="contributor-video-submit" type="submit" value="Submit">
-        </form>
-
+        <div id="form_page">
+            <div id="form_title" class="shojumaru">
+                Add your latest play video
+            </div>
+            <form>
+                <div id="inputs">
+                    <div id="url" class="inputValue">
+                        <label for url class="label1">Url:</label>
+                        <input type="url" name="videLink" id="video-url" class="input1" placeholder="http://www.youtu.be.com"
+                        pattern="http://www." size="60" required>
+                    </div>
+                    <div id="video" class="inputValue">
+                            <label for url class="label2">Video Name:</label>
+                            <input id="video-name" type="text" name="video" class="input2" placeholder="Video Name">
+                    </div>
+                </div>
+                <div id="selections">
+                    Game Name: <select placeholder="games">
+                        <option value="" disabled selected>--Games--</option>
+                        <option value="Call Of Duty">Call Of Duty</option>
+                        <option value="Fortnite">Fortnite</option>
+                        <option value="PlayerUnknown's BattleGrounds">PlayerUnknown's BattleGrounds</option>
+                        <option value="Battlefield">Battlefield</option>
+                        <option value="Outlast">Outlast</option>
+                        <option value="Skyrim">Skyrim</option>
+                        <option value="The Last Of Us">The Last Of Us</option>
+                        <option value="Grand Theft Auto">Grand Theft Auto</option>
+                    </select> 
+                    <br>
+                    <br>
+                    Game Genre <select placeholder="genre">
+                        <option value="" disabled selected>--Genre--</option>
+                        <option value="RPG">RPG</option>
+                        <option value="Survival">Survival</option>
+                        <option value="FPS">FPS</option>
+                        <option value="Racing">Racing</option>
+                        <option value="MMORPG">MMORPG</option>
+                        <option value="Battle Royale">Battle Royale</option>
+                    </select>
+                    <br>
+                    <br>
+                </div>
+                <div id="text">
+                    <textarea rows="10" cols="100" placeholder="description"></textarea>
+                    <br>
+                    <br>
+                <div id="buttons">
+                    Looking for: <fieldset id="choices">
+                        <input id="coach-request" type="radio" value="coach-request"> Request a Coach
+                        <input id="dont-be-like-me" type="radio" value="dont-be-like-me"> Lols for fails
+                        <input id="brag" type="radio" value="brag"> Bragging Rights
+                        <input id="contributor-feedback" type="radio" value="contributor-feedback">Contributor Feedback 
+                    </fieldset>
+                    <input id="contributor-video-submit" type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
         <script>
         // AJAX contributor video submission
 $("#contributor-video-submit").on("click", function(event) {
