@@ -1,0 +1,75 @@
+<html ng-app="topGames">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- Page Title -->
+  <title>Ding-su</title>
+
+  <!-- Responsive Metatag -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Shojumaru&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet">
+
+
+  <!-- from main end -->
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+  <script src="topGames.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+</head>
+
+<body class="container" ng-controller="twitch">
+<!-----------Header---------->
+    <div id="grid-container">
+        <div id="main-stage">
+            <div id="main-site">
+
+            </div>
+        </div>
+    </div>
+<!-----------Header----------->
+  <div class="container">
+    <div class="page-header">
+      <h1>Top Games being Coached right now!</h1>
+      <h2>Get ahead of the game right now!</h2>
+
+    </div>
+  </div>
+  <div ng-repeat="game in games track by $index">
+    <div class="row">
+      <div class="col-xs-4">
+        <div class="thumbnail">
+          <img class="gamePic" ng-src="{{game.game.box.medium}}" />
+          <div class="caption">
+            <div class="gameTitle">{{game.game.name}}</div>
+            total viewers : {{game.viewers}}
+          </div>
+        </div>
+
+      </div>
+      <div class="col-xs-8" ng-repeat="streamer in streamers |limitTo: 10">
+
+        <table class="table container" ng-show="streamer.game == game.game.name ">
+          <thead></thead>
+          <tbody ng-repeat="streams in streamer.streams">
+            <tr>
+              <td class="streamerName"><a href=" {{streams.channel.url}}">{{streams.channel.display_name}}</a></td>
+              <td><img ng-src="{{streams.channel.logo}}" class="streamerLogo img-rounded"></td>
+              <td> viewers: {{streams.viewers}}</td>
+
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+
+</html>
