@@ -5,7 +5,7 @@ CREATE TABLE users(
     id INT NOT NULL AUTO_INCREMENT,
     userName VARCHAR(32) NOT NULL,
     beltColor VARCHAR(16) NOT NULL DEFAULT "White",
-    description TEXT(1000),
+    Description TEXT(1000),
     dateCreated TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     userRole VARCHAR(32) NOT NULL DEFAULT "contributor",
     dingBucks INT NOT NULL,
@@ -33,7 +33,7 @@ DROP TABLE IF EXISTS coachReviews;
 CREATE TABLE coachReviews(
     id INT NOT NULL AUTO_INCREMENT,
     userId INT NOT NULL,
-    message TEXT(1000),
+    Message TEXT(1000),
     dateCreate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     videoScore INT NOT NULL,
     PRIMARY KEY (id)
@@ -43,7 +43,7 @@ DROP TABLE IF EXISTS contributorReviews;
 CREATE TABLE contributorReviews(
     id INT NOT NULL AUTO_INCREMENT,
     userId INT NOT NULL,
-    message TEXT(1000),
+    Message TEXT(1000),
     dateCreate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
 );
@@ -52,7 +52,7 @@ DROP TABLE IF EXISTS user_reviews_coach;
 CREATE TABLE user_reviews_coach(
     id INT NOT NULL AUTO_INCREMENT,
     userId INT NOT NULL,
-    message TEXT(1000),
+    Message TEXT(1000),
     dateCreate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
 );
