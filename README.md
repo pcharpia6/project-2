@@ -42,7 +42,7 @@ Katie:
 
 3. Contributor:
     a. Contributor Main Screen:
-        i. Default YouTube video playing without sound (based on user preferred games)
+        i. Default YouTube video {{playing without sound?}} (based on user preferred games)
         ii. A scrolling element of button links to view videos
             1. Buttons contain Video Name, Contributor Name, Game Name, and Video Type Request (Icon based on game name?)
         iii. An "upload" button which links to a page to accept the video input data

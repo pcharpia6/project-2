@@ -6,23 +6,23 @@
     </head>
     <body>
         <form>
-            Url:<input type="url" name="videLink" id="url" placeholder="http://www.yourUrlhere.com"
+            Url:<input type="url" name="videLink" id="video-url" placeholder="http://www.youtu.be.com"
             pattern="http://www." size="60" required>
             <br>
             <br>
-            Video Name: <input type="text" name="video" placeholder="Video Name">
+            Video Name: <input id="video-name" type="text" name="video" placeholder="Video Name">
             <br>
             <br>
             Game Name: <select placeholder="games">
                 <option value="" disabled selected>--Games--</option>
-                <option value="COD">Call Of Duty</option>
-                <option value="FN">Fortnite</option>
-                <option value="PUBG">PUBG</option>
-                <option value="BF">BattleField</option>
-                <option value="OL">Outlast</option>
+                <option value="Call Of Duty">Call Of Duty</option>
+                <option value="Fortnite">Fortnite</option>
+                <option value="PlayerUnknown's BattleGrounds">PlayerUnknown's BattleGrounds</option>
+                <option value="Battlefield">Battlefield</option>
+                <option value="Outlast">Outlast</option>
                 <option value="Skyrim">Skyrim</option>
-                <option value="TLOU">The Last Of Us</option>
-                <option value="GTA">Grand Theft Auto</option>
+                <option value="The Last Of Us">The Last Of Us</option>
+                <option value="Grand Theft Auto">Grand Theft Auto</option>
             </select> 
             <br>
             <br>
@@ -33,20 +33,54 @@
                 <option value="FPS">FPS</option>
                 <option value="Racing">Racing</option>
                 <option value="MMORPG">MMORPG</option>
-                <option value="BR">Battle Royale</option>
+                <option value="Battle Royale">Battle Royale</option>
             </select>
             <br>
             <br>
-          <textarea rows="15" cols="100" placeholder="description"></textarea>
+          <textarea rows="10" cols="100" placeholder="description"></textarea>
           <br>
           <br>
           Looking for: <fieldset id="choices">
-              <input type="radio" value="coach_Request"> Request a Coach
-              <input type="radio" value="dont_be_like_me"> Lols for fails
-              <input type="radio" value="brag"> Bragging Rights
-              <input type="radio" value="contributor_Feedback">Contributor Feedback 
+              <input id="coach-request" type="radio" value="coach-request"> Request a Coach
+              <input id="dont-be-like-me" type="radio" value="dont-be-like-me"> Lols for fails
+              <input id="brag" type="radio" value="brag"> Bragging Rights
+              <input id="contributor-feedback" type="radio" value="contributor-feedback">Contributor Feedback 
           </fieldset>
-          <input type="submit" value="Submit">
+          <input id="contributor-video-submit" type="submit" value="Submit">
         </form>
+
+        <script>
+        // AJAX contributor video submission
+$("#contributor-video-submit").on("click", function(event) {
+	event.preventDefault();
+
+	var newVideo = {
+		videoName: $("#video-name").val().trim(),
+		gameName: $("#game-name").val().trim(),
+		Genre: $("#genre").val().trim(),
+		userName: $("#user-name").val().trim(),
+		coachRequest: $("#coach-request:checked").trim(),
+		Brag: $("#brag:checked").val(),
+		contributorFeedback: $("#contributor-feedback:checked").val(),
+		dontBeLikeMe: $("#dont-be-like-me:checked").val(),
+		videoUrl: $("#video-url").val().trim().slice(-11)
+	};
+
+	console.log(newVideo);
+
+	$.post("api/video", newVideo)
+		.then(function() {
+			$("#video-name").val("");
+			$("#game-name").val("");
+			$("#genre").val("");
+			$("#user-name").val("");
+			$("#coach-request").val("");
+			$("#brag").val("");
+			$("#contributor-feedback").val("");
+			$("#dont-be-like-me").val("");
+			$("#video-url").val("");
+		});
+});
+        </script>
     </body>
 </html>
