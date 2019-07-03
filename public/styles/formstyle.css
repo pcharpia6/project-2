@@ -1,37 +1,68 @@
-body {
-    background:linear-gradient(150deg, wheat,#6E1B00);
-    height: 100vh;
-    width: 100vh;
-    background-size: cover;
-}
-
-form{
-    display: grid;
-    grid-template-columns: 65% 10% 10% 15%;
-    grid-template-rows: 90% 10%;
-}
-
-#inputs{
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 1;
-}
-
-#buttons{
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 2;
-}
-
-label{
+.shojumaru{
     font-family: 'Shojumaru', cursive;
     color: red;
     text-shadow: black 5px 2px 2px, 0 0 0.5em orange, 0 0 0.5em orange,
     0 0 0.5em orange;
     font-size: 30px;
 }
+
+body {
+    background:linear-gradient(150deg, wheat,#6E1B00);
+    height: 100vh;
+    width: 100vh;
+    background-size: cover;
+    margin: auto;
+}
+#form_page{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    max-height: fit-content;
+}
+#form_title{
+    height: 20%;
+    text-align: center;
+    font-size: 40px;
+    text-decoration: underline;
+    text-decoration-color: black;
+}
+
+form{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+#inputs{
+    height: 25%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 30% 70%;
+}
+
+
+
+
+#selections{
+    height: 25%;
+}
+
+#text{
+    height: 25%;
+}
+
+#buttons{
+    height: 25%;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
+
 
 input{
     background-color: #EFE3AF;
