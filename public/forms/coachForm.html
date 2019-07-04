@@ -29,5 +29,30 @@
                 <option value="-5">-5 DB</option>
             </select>
         </form>
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+        <script>
+        // AJAX coach review submission
+            $("#coach-review-submit").on("click", function(event) {
+                event.preventDefault();
+
+                var newCoachReview = {
+                    // userName: (localStorage.getItem(("users").username)).val().trim(),
+                    Text: $("#text").val().trim(),
+                    Value: $("#ding-value").val().trim()
+                };
+
+                console.log(newCoachReview);
+
+                $.post("api/coach-review", newCoachReview)
+                    .then(function() {
+                        // $("#user-name").val("");
+                        $("#text").val("");
+                        $("#ding-value").val("");
+                    });
+            });
+</script>
     </body>
 </html>

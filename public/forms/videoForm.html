@@ -17,8 +17,8 @@
                 <div id="inputs">
                     <div id="url" class="input-value">
                         <label for url class="input-label shojumaru label-tweak">Url:</label>
-                        <input type="url" name="videLink" id="video-url" class="input-box input-insides" placeholder="http://www.youtu.be.com"
-                        pattern="http://www." size="60" required>
+                        <input type="url" name="videLink" id="video-url" class="input-box input-insides" placeholder="http://www.youtube.com"
+                        size="60" required>
                     </div>
                     <div id="video" class="input-value">
                             <label for url class="input-label shojumaru label-tweak">Video Name:</label>
@@ -28,7 +28,7 @@
                 <div id="selections">
                     <div id="games" class="choice-value">
                         <label for games class="shojumaru choice-label label-tweak">What game does this video show?</label>
-                        <select placeholder="games" class="input-insides">
+                        <select id="game-name" placeholder="games" class="input-insides">
                             <option value="" disabled selected>--Games--</option>
                             <option value="Call Of Duty">Call Of Duty</option>
                             <option value="Fortnite">Fortnite</option>
@@ -38,11 +38,16 @@
                             <option value="Skyrim">Skyrim</option>
                             <option value="The Last Of Us">The Last Of Us</option>
                             <option value="Grand Theft Auto">Grand Theft Auto</option>
+                            <option value="Vermintide 2">Vermintide 2</option>
+                            <option value="Cities Skylines">Cities Skylines</option>
+                            <option value="Counter Strike">Counter Strike</option>
+                            <option value="World of Tanks">World of Tanks</option>
+                            <option value="Other">Other</option>
                         </select> 
                     </div>
-                    <div id="genre" class="choice-value">
-                        <label for genre class="shojumaru choice-label label-tweak">What category does this game fall in?</label>
-                        <select placeholder="genre" class="input-insides">
+                    <div class="choice-value">
+                        <label for genre class="shojumaru choice-label label-tweak">What genre does this game fall in?</label>
+                        <select id="genre" placeholder="genre" class="input-insides">
                             <option value="" disabled selected>--Genre--</option>
                             <option value="RPG">RPG</option>
                             <option value="Survival">Survival</option>
@@ -50,19 +55,21 @@
                             <option value="Racing">Racing</option>
                             <option value="MMORPG">MMORPG</option>
                             <option value="Battle Royale">Battle Royale</option>
+                            <option value="Multiplayer Online Battle Arena">Multiplayer Online Battle Arena</option>
+                            <option value="Simulation">Simulation</option>
                         </select>
                     </div>
                 </div>
                 <div id="text">
                     <label for textarea class="shojumaru text-label label-tweak">Please provide a brief description</label>
-                    <textarea rows="11" cols="85" placeholder="Tell us about the game/you/what to look for.." class="input-insides"></textarea>
+                    <textarea id="description" rows="11" cols="85" placeholder="Tell us about the game you want to look for..." class="input-insides"></textarea>
                 </div>
                 <div id="buttons">
                     <div id="radio-buttons">
                     <label for fieldset class="shojumaru text-label label-tweak">Why are you posting this?</label>
                         <fieldset id="choices" class="input-insides">
                             <input id="coach-request" type="radio" value="coach-request"> Request a Coach
-                            <input id="dont-be-like-me" type="radio" value="dont-be-like-me"> Lols for fails
+                            <input id="dont-be-like-me" type="radio" value="dont-be-like-me"> Fails
                             <input id="brag" type="radio" value="brag"> Bragging Rights
                             <input id="contributor-feedback" type="radio" value="contributor-feedback">Contributor Feedback 
                         </fieldset>
@@ -73,6 +80,10 @@
                 </div>
             </form>
         </div>
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
         <script>
         // AJAX contributor video submission
 $("#contributor-video-submit").on("click", function(event) {
@@ -82,8 +93,9 @@ $("#contributor-video-submit").on("click", function(event) {
 		videoName: $("#video-name").val().trim(),
 		gameName: $("#game-name").val().trim(),
 		Genre: $("#genre").val().trim(),
-		userName: $("#user-name").val().trim(),
-		coachRequest: $("#coach-request:checked").trim(),
+        // userName: (localStorage.getItem(("users").username)).val().trim(),  {{{***TODO***}}}
+        Description: $("#description").val().trim(),
+		coachRequest: $("#coach-request:checked").val(),
 		Brag: $("#brag:checked").val(),
 		contributorFeedback: $("#contributor-feedback:checked").val(),
 		dontBeLikeMe: $("#dont-be-like-me:checked").val(),
@@ -96,12 +108,12 @@ $("#contributor-video-submit").on("click", function(event) {
 		.then(function() {
 			$("#video-name").val("");
 			$("#game-name").val("");
-			$("#genre").val("");
-			$("#user-name").val("");
-			$("#coach-request").val("");
-			$("#brag").val("");
-			$("#contributor-feedback").val("");
-			$("#dont-be-like-me").val("");
+            $("#genre").val("");
+            $("#description").val("");
+			$("#coach-request").removeAttr('checked');
+			$("#brag").removeAttr('checked');
+			$("#contributor-feedback").removeAttr('checked');
+			$("#dont-be-like-me").removeAttr('checked');
 			$("#video-url").val("");
 		});
 });

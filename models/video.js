@@ -45,6 +45,8 @@ module.exports = function(sequelize, DataTypes) {
 		}
 	});
 
+	// This doesn't seem to impact anything on the database build via JAWSDB
+	// I beleive the user association portion covers this, leaving for now
 	// Video.associate = function(models) {
 	//   Video.belongsTo(models.User, {
 	//     foreignKey: "userId", as: "User"
