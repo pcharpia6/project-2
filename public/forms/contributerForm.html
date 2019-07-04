@@ -20,5 +20,28 @@
                 <br>
                 <textarea id="Input_text" rows="15" cols="40" placeholder="Review"></textarea>
         </form>
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+        <script>
+        // AJAX contributor review submission
+            $("#contributor-review-submit").on("click", function(event) {
+                event.preventDefault();
+
+                var newContributorReview = {
+                    // userName: (localStorage.getItem(("users").username)).val().trim(),
+                    Text: $("#text").val().trim()
+                };
+
+                console.log(newContributorReview);
+
+                $.post("api/coach-review", newContributorReview)
+                    .then(function() {
+                        // $("#user-name").val("");
+                        $("#text").val("");
+                    });
+            });
+        </script>
     </body>
 </html>
