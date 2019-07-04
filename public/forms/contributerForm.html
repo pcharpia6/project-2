@@ -9,21 +9,30 @@
         <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../styles/formstyle.css">
-        <title>Contributer</title>
     </head>
     <body>
+        <div id="form_title" class="shojumaru">
+            Leave Your Comments
+        </div>
         <form>
-            <div class="container">
-                <label for="username"><b>Username</b></label>
-                <input type="text" placeholder="Username" name="username" required>
-                <br>
-                <br>
-                <textarea id="Input_text" rows="15" cols="40" placeholder="Review"></textarea>
+            <div id="inputs">
+                    <div id="userName" class="input-value">
+                        <label for = "username" class="input-label shojumaru label-tweak">User Name:</label>
+                        <input type="url" name="username" id="username" class="input-box input-insides" placeholder="Required" size="60" required>
+                    </div>
+            </div>
+            <div id="text">
+                <div id="text">
+                        <label for = "textarea" class="shojumaru text-label label-tweak">Your Review:</label>
+                        <textarea id="Input_text" rows="11" cols="85" placeholder="Try to keep your feedback helpful" class="input-insides"></textarea>
+                </div>
+            </div>
         </form>
         <script
         src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
         crossorigin="anonymous"></script>
+        <script src="../js/formtweak.js"></script>
         <script>
         // AJAX contributor review submission
             $("#contributor-review-submit").on("click", function(event) {
