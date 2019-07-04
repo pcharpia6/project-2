@@ -1,20 +1,38 @@
-﻿<div class="col-md-6 col-md-offset-3">
-    <h2>Login</h2>
-    <form name="form" ng-submit="vm.login()" role="form">
-        <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" class="form-control" ng-model="vm.username" required />
-            <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
+﻿<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Game Submission</title>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Shojumaru&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../../styles/formstyle.css">
+    </head>
+    <body>
+        <div id="form_page">
+            <div id="form_title" class="shojumaru">
+                Log In to Your Account
+            </div>
+            <form name="form" ng-submit="vm.login()" role="form">
+                <div id="inputs">
+                    <div class="form-group input-value" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+                        <label for="username" class="input-label shojumaru label-tweak">Username</label>
+                        <input type="text" name="username" id="username" class="form-control input-box input-insides" ng-model="vm.username" required placeholder="Required" />
+                        <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block"></span>
+                    </div>
+                    <div class="form-group input-value" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+                        <label for="password" class="input-label shojumaru label-tweak">Password</label>
+                        <input type="password" name="password" id="password" class="form-control input-box input-insides" ng-model="vm.password" required placeholder="Required" />
+                        <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block"></span>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <div class="align-right form-actions">
+                        <button type="submit" class="button" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Login</button>
+                        <img ng-if="vm.dataLoading"/>
+                        <a href="#!/register" class="button">Register</a>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" class="form-control" ng-model="vm.password" required />
-            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
-        </div>
-        <div class="form-actions">
-            <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Login</button>
-            <img ng-if="vm.dataLoading"/>
-            <a href="#!/register" class="btn btn-link">Register</a>
-        </div>
-    </form>
-</div>
+    </body>

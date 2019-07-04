@@ -144,4 +144,9 @@ textarea{
     font-size: 15px;
     padding: 15px;
     border-radius: 28%;
+    text-decoration: none;
+}
+
+.align-right{
+    text-align: right;
 }
