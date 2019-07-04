@@ -1,13 +1,18 @@
 $('body').fadeIn(1000);
 
 $(document).ready(function() {
-    userName = window.localStorage.getItem('userName');
-    console.log(userName);
+    userName = window.localStorage.getItem('users');
     if (userName === "guest"){
         $('#current-data').attr('src', './videoplayer.html');
+        $('.login').html('Register/Login');
     }
     else if(userName === "login"){
         $('#current-data').attr('src', './forms/login/login.html');   
+    }
+    else{
+        $('#current-data').attr('src', './videoplayer.html');
+        $('.login').hide();
+        $('.log-out').show();
     }
     menuTitle(userName);
     $('#title-text').animate({'margin-left': '0'}, 'slow');
@@ -38,5 +43,12 @@ $('.home').click(function(){
 });
 
 $('.login').click(function(){
+    console.log('clicky');
     $('#current-data').attr('src', './forms/login/login.html');
+});
+
+$('.log-out').click(function(){
+    $('.log-out').hide();
+    $('.login').show();
+    $('#current-data').attr('src', './videoplayer.html');
 });
