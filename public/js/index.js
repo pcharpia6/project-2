@@ -1,4 +1,5 @@
 // Get references to page elements
+console.log('Me too');
 var $userName = $("#user-name");
 var $description = $("#description");
 var $userSubmitBtn = $("#user-submit");

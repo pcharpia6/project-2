@@ -1,19 +1,23 @@
+var userName = "";
 
 $('.modal-button').click(function(e){
     if (this.id === 'guest'){
-    $('#myModal').fadeOut(slideOpen());
+        userName = "guest";
+        $('#myModal').fadeOut(slideOpen());       
     }
     else{
-        renderLoginChoices();
+        userName = "login";
+        $('#myModal').fadeOut(slideOpen());
     }
+    localStorage.setItem('userName', userName);
 });
 
-function renderLoginChoices(){
+/*function renderLoginChoices(){
     $('.modal-body').html('<p class="rock-salt"> Great! Are you a...</p>');
     $('.modal-footer').html('<button class="modal-button rock-salt" type="button" id="new-user">New User</button>');
     $('.modal-footer').append('<p class="rock-salt">Or</p>')
     $('.modal-footer').append('<button class="modal-button rock-salt" type="button" id="returning-user">Returning User</button>');
-}
+}*/
 
 function slideOpen(){
     $('#stage').css({"justify-content": "space-between"});
