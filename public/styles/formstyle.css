@@ -18,11 +18,13 @@
 
 body {
     background:linear-gradient(150deg, wheat,#6E1B00);
-    height: 100vh;
+    min-height: 100vh;
     width: 100vh;
     background-size: cover;
     margin: auto;
+    background-repeat: no-repeat;
 }
+
 #form_page{
     display: flex;
     flex-direction: column;

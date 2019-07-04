@@ -25,24 +25,30 @@ function menuTitle(userName){
     $('.menu-title').html(`Welcome ${userName}!`)
 }
 
+//main menu click functions
+
 $('#menu').click(function(){
-    $('#site-menu').fadeIn(300);
-    $('.menu-title').css({'border-bottom': '1px solid white'});
+    $('#site-menu').toggle(300);
+    $('.menu-title').toggleClass('menu-underline');
 });
 
 $('.about').click(function(){
+    $('#video-menu').hide();
     $('#current-data').attr('src', 'aboutus.html');
 });
 
 $('.games').click(function(){
+    $('#video-menu').css({'display' : 'flex'});
     $('#current-data').attr('src', './topGames/popularTwitch.html');
 });
 
 $('.home').click(function(){
+    $('#video-menu').hide();
     $('#current-data').attr('src', './videoplayer.html');
 });
 
 $('.login').click(function(){
+    $('#video-menu').hide();
     $('#current-data').attr('src', './forms/login/login.html');
 });
 
@@ -53,4 +59,19 @@ $('.log-out').click(function(){
     userName = "guest";
     menuTitle(userName);
     localStorage.setItem('users', userName);
+});
+
+//auxiliary menu click functions
+
+$('.coach').click(function(){
+    $('#current-data').attr('src', './forms/coachForm.html');
+});
+
+$('.review').click(function(){
+    $('#video-menu').css({'display' : 'flex'});
+    $('#current-data').attr('src', './forms/contributerForm.html');
+});
+
+$('.video').click(function(){
+    $('#current-data').attr('src', './forms/videoForm.html');
 });
