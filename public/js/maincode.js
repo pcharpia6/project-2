@@ -43,7 +43,6 @@ $('.home').click(function(){
 });
 
 $('.login').click(function(){
-    console.log('clicky');
     $('#current-data').attr('src', './forms/login/login.html');
 });
 
@@ -51,4 +50,7 @@ $('.log-out').click(function(){
     $('.log-out').hide();
     $('.login').show();
     $('#current-data').attr('src', './videoplayer.html');
+    userName = "guest";
+    menuTitle(userName);
+    localStorage.setItem('users', userName);
 });
