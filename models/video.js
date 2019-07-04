@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: false,
 			validate: {
 				isURL: true,
-				contains: "youtu.be"
+				contains: "youtu"
 			}
 		},
 		videoName: {
