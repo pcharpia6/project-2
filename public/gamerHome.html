@@ -5,8 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Welcome</title>
+    <link href="https://fonts.googleapis.com/css?family=Shojumaru&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/formstyle.css">
+    <link href="styles/gamerStyling.css" rel="stylesheet">
 </head>
 <body>
-    
+    <div id="grid-container">
+        <div id="video-player">
+            <div id="player"></div>
+        </div>
+        <div id="page-choices">
+            <div id="inputs" class="search-videos">
+                <div id="search-games" class="choice-value">
+                    <label for = "games" class="shojumaru choice-label label-tweak">What game does this video show?</label>
+                    <select id="game-name" placeholder="games" class="input-insides">
+                        <option value="" disabled selected>--Games--</option>
+                        <option value="Call Of Duty">Call Of Duty</option>
+                        <option value="Fortnite">Fortnite</option>
+                        <option value="PlayerUnknown's BattleGrounds">PlayerUnknown's BattleGrounds</option>
+                        <option value="Battlefield">Battlefield</option>
+                        <option value="Outlast">Outlast</option>
+                        <option value="Skyrim">Skyrim</option>
+                        <option value="The Last Of Us">The Last Of Us</option>
+                        <option value="Grand Theft Auto">Grand Theft Auto</option>
+                        <option value="Vermintide 2">Vermintide 2</option>
+                        <option value="Cities Skylines">Cities Skylines</option>
+                        <option value="Counter Strike">Counter Strike</option>
+                        <option value="World of Tanks">World of Tanks</option>
+                        <option value="Other">Other</option>
+                    </select> 
+                </div>
+                <div id="search-genres" class="choice-value">
+                    <label for = "genre" class="shojumaru choice-label label-tweak">What category does this game fall in?</label>
+                    <select id="genre" placeholder="genre" class="input-insides">
+                        <option value="" disabled selected>--Genre--</option>
+                        <option value="RPG">RPG</option>
+                        <option value="Survival">Survival</option>
+                        <option value="FPS">FPS</option>
+                        <option value="Racing">Racing</option>
+                        <option value="MMORPG">MMORPG</option>
+                        <option value="Battle Royale">Battle Royale</option>
+                        <option value="Multiplayer Online Battle Arena">Multiplayer Online Battle Arena</option>
+                        <option value="Simulation">Simulation</option>
+                    </select>
+                </div>
+            </div>
+            <div id="submit-video">
+                Submit a Video
+            </div>
+        </div>
+    </div>
+    <script src = "https://www.youtube.com/iframe_api"></script>
+    <script src="js/playerscript.js"></script> 
 </body>
 </html>
