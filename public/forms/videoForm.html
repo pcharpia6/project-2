@@ -45,7 +45,7 @@
                             <option value="Other">Other</option>
                         </select> 
                     </div>
-                    <div id="genre" class="choice-value">
+                    <div class="choice-value">
                         <label for = "genre" class="shojumaru choice-label label-tweak">What category does this game fall in?</label>
                         <select id="genre" placeholder="genre" class="input-insides">
                             <option value="" disabled selected>--Genre--</option>
@@ -110,10 +110,10 @@ $("#contributor-video-submit").on("click", function(event) {
 			$("#game-name").val("");
             $("#genre").val("");
             $("#description").val("");
-			$("#coach-request").removeAttr('checked');
-			$("#brag").removeAttr('checked');
-			$("#contributor-feedback").removeAttr('checked');
-			$("#dont-be-like-me").removeAttr('checked');
+			$("#coach-request").prop('checked', false);
+			$("#brag").prop('checked', false);
+			$("#contributor-feedback").prop('checked', false);
+			$("#dont-be-like-me").prop('checked', false);
 			$("#video-url").val("");
 		});
 });
