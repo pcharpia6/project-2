@@ -35,6 +35,9 @@
                         <option value="World of Tanks">World of Tanks</option>
                         <option value="Other">Other</option>
                     </select> 
+                    <div id="submit-button">
+                        <input id="game-search-submit" type="submit" value="Submit" class="button">
+                    </div>
                 </div>
                 <div id="search-genres" class="choice-value">
                     <label for = "genre" class="shojumaru choice-label label-tweak">What category does this game fall in?</label>
@@ -49,6 +52,9 @@
                         <option value="Multiplayer Online Battle Arena">Multiplayer Online Battle Arena</option>
                         <option value="Simulation">Simulation</option>
                     </select>
+                    <div id="submit-button">
+                        <input id="genre-search-submit" type="submit" value="Submit" class="button">
+                    </div>
                 </div>
             </div>
             <div id="submit-video">
@@ -58,5 +64,27 @@
     </div>
     <script src = "https://www.youtube.com/iframe_api"></script>
     <script src="js/playerscript.js"></script> 
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+    <script>
+        $("#game-search-submit").on("click", function(event) {
+            event.preventDefault();
+
+            $.get("/api/gameName/"+$("#game-name").val().trim())
+                .then(function() {
+                    // populate some buttons
+                });
+        });
+        $("#genre-search-submit").on("click", function(event) {
+            event.preventDefault();
+
+            $.get("/api/Genre/"+$("#genre").val().trim())
+                .then(function() {
+                    // populate some buttons
+                });
+        });
+    </script>
 </body>
 </html>
