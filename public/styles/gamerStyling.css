@@ -1,6 +1,4 @@
-body{
-    object-fit: scale-down;
-}
+
 #page-content{
     display: grid;
     top: 0px;
@@ -16,6 +14,9 @@ body{
     grid-row-start: 2;
     grid-row-end: 2;
     text-align: center;
+    width: 85%;
+    padding: 5%;
+    height: 50%;
 }
 
 #page-choices{
