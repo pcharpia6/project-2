@@ -1,20 +1,28 @@
-#grid-container{
+body{
+    object-fit: scale-down;
+}
+#page-content{
     display: grid;
     top: 0px;
     height: 100vh;
     width: 100vw;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 70% 30%;    
+    grid-template-rows: 5% 90% 5%;
 }
 
 #video-player{
     grid-column-start: 1;
     grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 2;
     text-align: center;
 }
 
 #page-choices{
     grid-column-start: 2;
     grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -30,4 +38,3 @@
     height: 50%;
     margin: 5px;
 }
-
