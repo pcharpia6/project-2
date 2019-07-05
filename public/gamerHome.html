@@ -53,7 +53,7 @@
                     </div>
                 </div>
             </div>
-            <div id="submit-video">
+            <div id="submit-video shojumaru label-tweak">
                 Submit a Video
             </div>
         </div>
@@ -74,6 +74,7 @@
             event.preventDefault();
 
             $.get("/api/gameName/"+$("#game-name").val().trim())
+
                 .then(function(data) {
                     console.log("res.json data = "+data)
                     makeVideosArray(data);
