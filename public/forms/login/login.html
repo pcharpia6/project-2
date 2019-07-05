@@ -1,53 +1,37 @@
 ﻿<!DOCTYPE html>
-<html lang="en-US">
-    <head>
-        <title>Log In</title>
-        <meta charset="UTF-8">
-        <link href="https://fonts.googleapis.com/css?family=Shojumaru&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="../../styles/formstyle.css">
-    </head>
-    <body>
-        <div id="form_page">
-            <div id="form_title" class="shojumaru">
-                Log In to Your Account
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Shojumaru&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../styles/formstyle.css">
+    <title>Ding-Su Login Form</title>
+</head>
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <div class="col-sm-8 col-sm-offset-2">
+                <div ng-view></div>
             </div>
-            <form name="form" ng-submit="vm.login()" role="form">
-                <div id="inputs">
-                    <div class="form-group input-value" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
-                        <label for="username" class="input-label shojumaru label-tweak">Username</label>
-                        <input type="text" name="username" id="username" class="form-control input-box input-insides" ng-model="vm.username" required placeholder="Required" />
-                        <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block"></span>
-                    </div>
-                    <div class="form-group input-value" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
-                        <label for="password" class="input-label shojumaru label-tweak">Password</label>
-                        <input type="password" name="password" id="password" class="form-control input-box input-insides" ng-model="vm.password" required placeholder="Required" />
-                        <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block"></span>
-                    </div>
-                </div>
-                <div class="buttons">
-                    <div class="align-right form-actions">
-                        <button type="submit" class="button" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Login</button>
-                        <img ng-if="vm.dataLoading"/>
-                        <a href="../register/register.html" class="button">Register</a>
-                    </div>
-                </div>
-            </form>
         </div>
-        <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
-        <script src="//code.angularjs.org/1.6.0/angular.min.js"></script>
-        <script src="//code.angularjs.org/1.6.0/angular-route.min.js"></script>
-        <script src="//code.angularjs.org/1.6.0/angular-cookies.min.js"></script>
+    </div>
 
-        <script src="../app.js"></script>
-        <script src="../app/success.js"></script>
-        <script src="../app/authentication.js"></script>
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//code.angularjs.org/1.6.0/angular.min.js"></script>
+    <script src="//code.angularjs.org/1.6.0/angular-route.min.js"></script>
+    <script src="//code.angularjs.org/1.6.0/angular-cookies.min.js"></script>
 
-        <script src="../app/userlocal-storage.js"></script>
+    <script src="app.js"></script>
+    <script src="app/authentication.js"></script>
+    <script src="app/success.js"></script>
 
-        <script src="../home/home.controller.js"></script>
-        <script src="../login/login.controller.js"></script>
-        <script src="../register/register.controller.js"></script>
-    </body>
+    <script src="app/userlocal-storage.js"></script>
+
+    <script src="home/home.controller.js"></script>
+    <script src="login/login.controller.js"></script>
+    <script src="register/register.controller.js"></script>
+</body>
 </html>
