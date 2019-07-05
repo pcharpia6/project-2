@@ -27,7 +27,7 @@
                 </div>
                 <div id="selections">
                     <div id="games" class="choice-value">
-                        <label for = "games" class="shojumaru choice-label label-tweak">What game does this video show?</label>
+                        <label for = "games" class="shojumaru choice-label label-tweak">Which game does this video show?</label>
                         <select id="game-name" placeholder="games" class="input-insides">
                             <option value="" disabled selected>--Games--</option>
                             <option value="Call Of Duty">Call Of Duty</option>
@@ -46,7 +46,7 @@
                         </select> 
                     </div>
                     <div class="choice-value">
-                        <label for = "genre" class="shojumaru choice-label label-tweak">What category does this game fall in?</label>
+                        <label for = "genre" class="shojumaru choice-label label-tweak">Which genre does this game fall in?</label>
                         <select id="genre" placeholder="genre" class="input-insides">
                             <option value="" disabled selected>--Genre--</option>
                             <option value="RPG">RPG</option>
@@ -60,10 +60,12 @@
                         </select>
                     </div>
                 </div>
+                <!-- What does the user want the watcher to pay attention to? -->
                 <div id="text">
-                    <label for = "textarea" class="shojumaru text-label label-tweak">Please provide a brief description</label>
+                    <label for = "textarea" class="shojumaru text-label label-tweak">Please provide a brief description. What are we looking at in this video? Is theere a specific time-point we should begin watching?</label>
                     <textarea id="description" minlength="16" rows="11" cols="85" placeholder="Tell us about the game you want to look for..." class="input-insides"></textarea>
                 </div>
+                <!-- Capture information about why the user has posted this video. -->
                 <div id="buttons">
                     <div id="radio-buttons">
                     <label for = "fieldset" class="shojumaru text-label label-tweak">Why are you posting this?</label>
@@ -88,7 +90,7 @@
         // AJAX contributor video submission
 $("#contributor-video-submit").on("click", function(event) {
 	event.preventDefault();
-
+    // Create a video object which matches the database requirements
 	var newVideo = {
 		videoName: $("#video-name").val().trim(),
 		gameName: $("#game-name").val().trim(),
@@ -101,9 +103,7 @@ $("#contributor-video-submit").on("click", function(event) {
 		dontBeLikeMe: $("#dont-be-like-me:checked").val(),
 		videoUrl: $("#video-url").val().trim()
 	};
-
-	console.log(newVideo);
-
+    // Send the newVideo object to the database and reset the values of the inputs
 	$.post("/api/video", newVideo)
 		.then(function() {
 			$("#video-name").val("");

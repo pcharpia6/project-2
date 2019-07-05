@@ -77,7 +77,6 @@
             $.get("/api/gameName/"+$("#game-name").val().trim())
 
                 .then(function(data) {
-                    console.log("res.json data = "+data)
                     makeVideosArray(data);
                 });
         });
@@ -92,8 +91,6 @@
 
         function makeVideosArray(data) { 
         for (var i=0; i<=10; i++) {
-            console.log("{data} = " + {data});
-            console.log("data[i] = " + data[i]);
             newVideo = {
                 videoName: data[i].Video.videoName,
                 videoId: data[i].Video.id,
@@ -120,21 +117,46 @@
             videosArray.push(newVideo);
         };
         pushVideosArrayHTML();
-    }
+    };
     
     function pushVideosArrayHTML() {
         for (i=0; i<videosArray.length; i++){
             var newButton = $( "<div class='button video-button>" );
             newButton.attr( "videoId", videoId );
             newButton.attr( "url", videoUrl );  
-            newButton.append($( "<h5 class='video-name'>" ).text( videosArray[i].videoName ));
-            newButton.append($( "<p>" ).text( videosArray[i].gameName ));
-            newButton.append($( "<p>" ).text( videosArray[i].contributorName ));
-            newButton.append($( "<p>" ).text( videosArray[i].requestTypes() ));
+            newButton.append( $( "<h5 class='video-name'>" ).text( videosArray[i].videoName ));
+            newButton.append( $( "<p>" ).text( videosArray[i].gameName ));
+            newButton.append( $( "<p>" ).text( videosArray[i].contributorName ));
+            newButton.append( $( "<p>" ).text( videosArray[i].requestTypes() ));
             $("#video-buttons").append( newButton );
         }
         videosArray = [];
-    }
+    };
+
+    $(function() {
+    $("#game-name").change(function() {
+        if ($(this).val() === true) {
+            $("#genre").prop("disabled", true);
+            $("#genre-search-submit").prop("disabled", true);
+        } else {
+            $("#genre").prop("disabled", false);
+            $("#genre-search-submit").prop("disabled", false);
+        };
+    });
+    });
+
+    $(function(){
+    $("#genre").change(function(){
+        if ($(this).val() === true) {
+            $("#game-name").prop("disabled", true);
+            $("#game-search-submit").prop("disabled", true);
+        } else {
+            $("#game-name").prop("disabled",false);
+            $("#game-search-submit").prop("disabled",false);
+        };
+    });
+    });
+
     </script>
 </body>
 </html>
