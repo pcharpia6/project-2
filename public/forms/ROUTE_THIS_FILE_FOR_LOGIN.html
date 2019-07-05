@@ -1,19 +1,21 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="app">
+﻿<!DOCTYPE html>
+<html ng-app="app">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Shojumaru&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../styles/formstyle.css">
-    <title>Ding-Su Login Form</title>
+    <meta charset="utf-8" />
+
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Shojumaru&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../styles/formstyle.css">
+
+    <title>D!ng-su</title>
 </head>
 <body>
     <div class="jumbotron">
         <div class="container">
             <div class="col-sm-8 col-sm-offset-2">
+                <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
                 <div ng-view></div>
             </div>
         </div>
