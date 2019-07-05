@@ -3,11 +3,7 @@ module.exports = function(sequelize, DataTypes) {
 	var Video = sequelize.define("Video", {
 		videoUrl: {
 			type: DataTypes.STRING,
-			allowNull: false,
-			validate: {
-				isURL: true,
-				contains: "youtu"
-			}
+			allowNull: false
 		},
 		videoName: {
 			type: DataTypes.STRING,
@@ -44,6 +40,17 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.BOOLEAN
 		}
 	});
+
+	Video.associate = function(models) {
+		Video.hasMany(models.coachReview, {
+			foreignKey: "videoId"
+		});
+	};
+	Video.associate = function(models) {
+		Video.hasMany(models.coachReview, {
+			foreignKey: "videoId"
+		});
+	};
 
 	// This doesn't seem to impact anything on the database build via JAWSDB
 	// I beleive the user association portion covers this, leaving for now
