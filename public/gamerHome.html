@@ -94,12 +94,27 @@
             console.log("{data} = " + {data});
             console.log("data[i] = " + data[i]);
             newVideo = {
-                videoName: data[i].restaurant.name,
-                videoId: searchRes.restaurants[i].restaurant.cuisines,
-                gameName: searchRes.restaurants[i].restaurant.location.latitude,
-                contributorName: searchRes.restaurants[i].restaurant.location.longitude,
-                videoUrl: searchRes.restaurants[i].restaurant.events_url,
-                requestTypes: searchRes.restaurants[i].restaurant.events_url
+                videoName: data[i].Video.videoName,
+                videoId: data[i].Video.id,
+                gameName: data[i].Video.ganeName,
+                contributorName: data[i].Video.userId,
+                videoUrl: data[i].Video.videoUrl,
+                requestTypes: function() {
+                    let reqTypes;
+                    if (data[i].Video.coachRequest === 0) {
+                        reqTypes += "Coach Request, "
+                    };
+                    if (data[i].Video.dontBeLikeMe === 0) {
+                        reqTypes += "Fails, "
+                    };
+                    if (data[i].Video.Brag === 0) {
+                        reqTypes += "Brag, "
+                    };
+                    if (data[i].Video.contributorFeedback === 0) {
+                        reqTypes += "Contributor Feedback"
+                    };
+                    return reqTypes;
+                }
             }
             videosArray.push(newVideo);
         };
@@ -108,12 +123,12 @@
     
     function pushVideosArrayHTML() {
         for (i=0; i<videosArray.length; i++){
-            var newDiv = $("<div>");       
-            newDiv.append($("<h5 class='video-name'>").text(restaurants[i].restName));
-            newDiv.append($("<p>").text(restaurants[i].restCuis));
-            newDiv.append($("<a href="+restaurants[i].restUrl+" target='_blank'>").text("Visit Website"));
-            newDiv.append($("<p>   <p>"));
-            $("#restaurants").append(newDiv);
+            var newButton = $("<div class='button video-button>");       
+            newDiv.append($("<h5 class='video-name'>").text(videosArray[i].videoName));
+            newDiv.append($("<p>").text(videosArray[i].gameName));
+            newDiv.append($("<p>").text(videosArray[i].contributorName));
+            newDiv.append($("<p>").text(videosArray[i].requestTypes()));
+            $("#video-buttons").append(newButton);
         }
     }
     </script>
