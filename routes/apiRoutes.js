@@ -32,7 +32,7 @@ module.exports = function(app) {
 	});
 
 	// Create a review of coach review
-	app.post("api/contributor-response-coach-review", function(req, res) {
+	app.post("/api/contributor-response-coach-review", function(req, res) {
 		db.contributorResponseCoachReview.create(req.body).then(function(dbContributorResponseCoachReview) {
 			res.json(dbContributorResponseCoachReview);
 		});

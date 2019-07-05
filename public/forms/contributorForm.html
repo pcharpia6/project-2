@@ -26,6 +26,9 @@
                         <label for = "textarea" class="shojumaru text-label label-tweak">Your Review:</label>
                         <textarea id="Input_text" rows="11" cols="85" placeholder="Try to keep your feedback helpful" class="input-insides"></textarea>
                 </div>
+                <div id="submit-button">
+                        <input id="contributor-review-submit" type="submit" value="Submit" class="button">
+                    </div>
             </div>
         </form>
         <script
@@ -45,7 +48,7 @@
 
                 console.log(newContributorReview);
 
-                $.post("api/coach-review", newContributorReview)
+                $.post("/api/coach-review", newContributorReview)
                     .then(function() {
                         // $("#user-name").val("");
                         $("#text").val("");

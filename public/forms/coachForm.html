@@ -37,6 +37,9 @@
                     </select>
                 </div>     
             </div>
+            <div id="submit-button">
+                    <input id="coach-review-submit" type="submit" value="Submit" class="button">
+                </div>
         <form>
         <script
         src="https://code.jquery.com/jquery-3.4.1.js"
@@ -56,7 +59,7 @@
 
                 console.log(newCoachReview);
 
-                $.post("api/coach-review", newCoachReview)
+                $.post("/api/coach-review", newCoachReview)
                     .then(function() {
                         // $("#user-name").val("");
                         $("#text").val("");
