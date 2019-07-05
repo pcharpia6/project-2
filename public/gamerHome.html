@@ -35,6 +35,9 @@
                         <option value="World of Tanks">World of Tanks</option>
                         <option value="Other">Other</option>
                     </select> 
+                    <div id="submit-button">
+                        <input id="game-search-submit" type="submit" value="Submit" class="button">
+                    </div>
                 </div>
                 <div id="search-genres" class="choice-value">
                     <label for = "genre" class="shojumaru choice-label label-tweak">What category does this game fall in?</label>
@@ -49,6 +52,9 @@
                         <option value="Multiplayer Online Battle Arena">Multiplayer Online Battle Arena</option>
                         <option value="Simulation">Simulation</option>
                     </select>
+                    <div id="submit-button">
+                        <input id="genre-search-submit" type="submit" value="Submit" class="button">
+                    </div>
                 </div>
             </div>
             <div id="submit-video">
@@ -58,5 +64,56 @@
     </div>
     <script src = "https://www.youtube.com/iframe_api"></script>
     <script src="js/playerscript.js"></script> 
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+    <script>
+        let videosArray = [];
+
+        $("#game-search-submit").on("click", function(event) {
+            event.preventDefault();
+
+            $.get("/api/gameName/"+$("#game-name").val().trim())
+                .then(//makeVideosArray() 
+                {
+                    // populate some buttons
+                });
+        });
+        $("#genre-search-submit").on("click", function(event) {
+            event.preventDefault();
+
+            $.get("/api/Genre/"+$("#genre").val().trim())
+                .then(function() {
+                    // populate some buttons
+                });
+        });
+
+    //     function makeVideosArray() { 
+    //     for (var i=0; i<=10; i++) {
+    //         newVideo = {
+    //             videoName: searchRes.restaurants[i].restaurant.name,
+    //             videoId: searchRes.restaurants[i].restaurant.cuisines,
+    //             gameName: searchRes.restaurants[i].restaurant.location.latitude,
+    //             contributorName: searchRes.restaurants[i].restaurant.location.longitude,
+    //             videoUrl: searchRes.restaurants[i].restaurant.events_url,
+    //             requestTypes: searchRes.restaurants[i].restaurant.events_url
+    //         }
+    //         videosArray.push(newVideo);
+    //     };
+    //     pushVideosArrayHTML();
+    // }
+    
+    // function pushVideosArrayHTML() {
+    //     for (i=0; i<videosArray.length; i++){
+    //         var newDiv = $("<div>");       
+    //         newDiv.append($("<h5 class='video-name'>").text(restaurants[i].restName));
+    //         newDiv.append($("<p>").text(restaurants[i].restCuis));
+    //         newDiv.append($("<a href="+restaurants[i].restUrl+" target='_blank'>").text("Visit Website"));
+    //         newDiv.append($("<p>   <p>"));
+    //         $("#restaurants").append(newDiv);
+    //     }
+    // }
+    </script>
 </body>
 </html>
