@@ -63,6 +63,10 @@ body{
     display: none;
 }
 
+.gamer-home{
+    display: none;
+}
+
 #main-stage{
     grid-row-start: 2;
     grid-row-end: 2;
