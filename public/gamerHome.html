@@ -76,7 +76,6 @@
             $.get("/api/gameName/"+$("#game-name").val().trim())
 
                 .then(function(data) {
-                    console.log("res.json data = "+data)
                     makeVideosArray(data);
                 });
         });
@@ -91,8 +90,6 @@
 
         function makeVideosArray(data) { 
         for (var i=0; i<=10; i++) {
-            console.log("{data} = " + {data});
-            console.log("data[i] = " + data[i]);
             newVideo = {
                 videoName: data[i].Video.videoName,
                 videoId: data[i].Video.id,
