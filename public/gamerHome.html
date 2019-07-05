@@ -75,9 +75,10 @@
             event.preventDefault();
 
             $.get("/api/gameName/"+$("#game-name").val().trim())
-                .then(//makeVideosArray() 
-                {
-                    // populate some buttons
+
+                .then(function(data) {
+                    console.log("res.json data = "+data)
+                    makeVideosArray(data);
                 });
         });
         $("#genre-search-submit").on("click", function(event) {
@@ -89,31 +90,31 @@
                 });
         });
 
-    //     function makeVideosArray() { 
-    //     for (var i=0; i<=10; i++) {
-    //         newVideo = {
-    //             videoName: searchRes.restaurants[i].restaurant.name,
-    //             videoId: searchRes.restaurants[i].restaurant.cuisines,
-    //             gameName: searchRes.restaurants[i].restaurant.location.latitude,
-    //             contributorName: searchRes.restaurants[i].restaurant.location.longitude,
-    //             videoUrl: searchRes.restaurants[i].restaurant.events_url,
-    //             requestTypes: searchRes.restaurants[i].restaurant.events_url
-    //         }
-    //         videosArray.push(newVideo);
-    //     };
-    //     pushVideosArrayHTML();
-    // }
+        function makeVideosArray(data) { 
+        for (var i=0; i<=10; i++) {
+            newVideo = {
+                videoName: data[i].restaurant.name,
+                videoId: searchRes.restaurants[i].restaurant.cuisines,
+                gameName: searchRes.restaurants[i].restaurant.location.latitude,
+                contributorName: searchRes.restaurants[i].restaurant.location.longitude,
+                videoUrl: searchRes.restaurants[i].restaurant.events_url,
+                requestTypes: searchRes.restaurants[i].restaurant.events_url
+            }
+            videosArray.push(newVideo);
+        };
+        pushVideosArrayHTML();
+    }
     
-    // function pushVideosArrayHTML() {
-    //     for (i=0; i<videosArray.length; i++){
-    //         var newDiv = $("<div>");       
-    //         newDiv.append($("<h5 class='video-name'>").text(restaurants[i].restName));
-    //         newDiv.append($("<p>").text(restaurants[i].restCuis));
-    //         newDiv.append($("<a href="+restaurants[i].restUrl+" target='_blank'>").text("Visit Website"));
-    //         newDiv.append($("<p>   <p>"));
-    //         $("#restaurants").append(newDiv);
-    //     }
-    // }
+    function pushVideosArrayHTML() {
+        for (i=0; i<videosArray.length; i++){
+            var newDiv = $("<div>");       
+            newDiv.append($("<h5 class='video-name'>").text(restaurants[i].restName));
+            newDiv.append($("<p>").text(restaurants[i].restCuis));
+            newDiv.append($("<a href="+restaurants[i].restUrl+" target='_blank'>").text("Visit Website"));
+            newDiv.append($("<p>   <p>"));
+            $("#restaurants").append(newDiv);
+        }
+    }
     </script>
 </body>
 </html>
