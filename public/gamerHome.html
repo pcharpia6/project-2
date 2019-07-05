@@ -90,6 +90,8 @@
 
         function makeVideosArray(data) { 
         for (var i=0; i<=10; i++) {
+            console.log("{data} = " + {data});
+            console.log("data[i] = " + data[i]);
             newVideo = {
                 videoName: data[i].restaurant.name,
                 videoId: searchRes.restaurants[i].restaurant.cuisines,
