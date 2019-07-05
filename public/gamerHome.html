@@ -84,8 +84,8 @@
             event.preventDefault();
 
             $.get("/api/Genre/"+$("#genre").val().trim())
-                .then(function() {
-                    // populate some buttons
+                .then(function(data) {
+                   makeVideosArray(data);
                 });
         });
 
@@ -123,13 +123,16 @@
     
     function pushVideosArrayHTML() {
         for (i=0; i<videosArray.length; i++){
-            var newButton = $("<div class='button video-button>");       
-            newDiv.append($("<h5 class='video-name'>").text(videosArray[i].videoName));
-            newDiv.append($("<p>").text(videosArray[i].gameName));
-            newDiv.append($("<p>").text(videosArray[i].contributorName));
-            newDiv.append($("<p>").text(videosArray[i].requestTypes()));
-            $("#video-buttons").append(newButton);
+            var newButton = $( "<div class='button video-button>" );
+            newButton.attr( "videoId", videoId );
+            newButton.attr( "url", videoUrl );  
+            newButton.append($( "<h5 class='video-name'>" ).text( videosArray[i].videoName ));
+            newButton.append($( "<p>" ).text( videosArray[i].gameName ));
+            newButton.append($( "<p>" ).text( videosArray[i].contributorName ));
+            newButton.append($( "<p>" ).text( videosArray[i].requestTypes() ));
+            $("#video-buttons").append( newButton );
         }
+        videosArray = [];
     }
     </script>
 </body>
