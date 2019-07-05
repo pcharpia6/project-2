@@ -43,7 +43,6 @@ module.exports = function(app) {
 			limit: 10,
 			where: { gameName: req.params.gameName }
 		}).then(function(dbGameName) {
-			console.log("res.json = "+res.json(dbGameName));
 			res.json(dbGameName);
 		});
 	});
