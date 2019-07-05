@@ -1,3 +1,4 @@
 $('#submit-video').click(function(){
-    $('#game-search-submit')
+    $('#search-videos').hide();
+    $('#submit-video').append($('<div>').load("/forms/videoForm.html"));
 });

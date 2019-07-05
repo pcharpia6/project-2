@@ -56,7 +56,7 @@ $('.gamer-home').click(function(){
 
 $('.login').click(function(){
     $('#video-menu').hide();
-    $('#current-data').attr('src', './forms/loginForm.html');
+    $('#current-data').attr('src', './loginForm.html');
 });
 
 $('.log-out').click(function(){
