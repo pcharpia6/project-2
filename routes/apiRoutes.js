@@ -40,14 +40,17 @@ module.exports = function(app) {
 
 	app.get("/api/gameName/:gameName", function(req, res) {
 		db.Video.findAll({
+			limit: 10,
 			where: { gameName: req.params.gameName }
 		}).then(function(dbGameName) {
+			console.log(res.json(dbGameName));
 			res.json(dbGameName);
 		});
 	});
 
 	app.get("/api/genre/:genre", function(req, res) {
 		db.Video.findAll({
+			limit: 10,
 			where: { Genre: req.params.genre }
 		}).then(function(dbGameGenre) {
 			res.json(dbGameGenre);
