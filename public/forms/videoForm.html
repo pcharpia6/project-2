@@ -104,7 +104,7 @@ $("#contributor-video-submit").on("click", function(event) {
 
 	console.log(newVideo);
 
-	$.post("api/video", newVideo)
+	$.post("/api/video", newVideo)
 		.then(function() {
 			$("#video-name").val("");
 			$("#game-name").val("");

@@ -45,7 +45,7 @@
 
                 console.log(newContributorReview);
 
-                $.post("api/coach-review", newContributorReview)
+                $.post("/api/coach-review", newContributorReview)
                     .then(function() {
                         // $("#user-name").val("");
                         $("#text").val("");
