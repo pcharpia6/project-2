@@ -136,8 +136,10 @@
     $("#game-name").change(function() {
         if ($(this).val() === true) {
             $("#genre").prop("disabled", true);
+            $("#genre-search-submit").prop("disabled", true);
         } else {
             $("#genre").prop("disabled", false);
+            $("#genre-search-submit").prop("disabled", false);
         };
     });
     });
@@ -146,8 +148,10 @@
     $("#genre").change(function(){
         if ($(this).val() === true) {
             $("#game-name").prop("disabled", true);
+            $("#game-search-submit").prop("disabled", true);
         } else {
             $("#game-name").prop("disabled",false);
+            $("#game-search-submit").prop("disabled",false);
         };
     });
     });
