@@ -31,6 +31,9 @@ body {
     flex-wrap: nowrap;
     justify-content: center;
     max-height: fit-content;
+    zoom: 0.75;
+    transform: scale(1.1);
+    transform-origin: 0 0;
 }
 #form_title{
     height: 10%;

@@ -69,7 +69,7 @@ $('.coach').click(function(){
 
 $('.review').click(function(){
     $('#video-menu').css({'display' : 'flex'});
-    $('#current-data').attr('src', './forms/contributerForm.html');
+    $('#current-data').attr('src', './forms/contributorForm.html');
 });
 
 $('.video').click(function(){
