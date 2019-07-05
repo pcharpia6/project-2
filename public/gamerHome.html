@@ -74,9 +74,13 @@
             event.preventDefault();
 
             $.get("/api/gameName/"+$("#game-name").val().trim())
+
                 .then(//makeVideosArray() 
                 {
-                    // populate some buttons
+
+                .then(function(data) {
+                    console.log("res.json data = "+data)
+
                 });
         });
         $("#genre-search-submit").on("click", function(event) {
