@@ -44,3 +44,7 @@
     transform: translate(-50%, -50%);
     transform-origin: center center;
 }
+
+#inputs{
+    height: 50%;
+}
