@@ -75,3 +75,7 @@ $('.review').click(function(){
 $('.video').click(function(){
     $('#current-data').attr('src', './forms/videoForm.html');
 });
+
+$('.search').click(function(){
+    $('#current-data').attr('src', './forms/videoForm.html');
+});

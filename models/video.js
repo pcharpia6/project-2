@@ -1,6 +1,9 @@
 /* eslint-disable prettier/prettier */
 module.exports = function(sequelize, DataTypes) {
 	var Video = sequelize.define("Video", {
+		// this ends up being an 11 digit value (videoID would be more accurate
+		// but is already taken as a foreign key on user.js so will not be used
+		// to prevent confusion)
 		videoUrl: {
 			type: DataTypes.STRING,
 			allowNull: false
@@ -47,18 +50,10 @@ module.exports = function(sequelize, DataTypes) {
 		});
 	};
 	Video.associate = function(models) {
-		Video.hasMany(models.coachReview, {
+		Video.hasMany(models.contributorReview, {
 			foreignKey: "videoId"
 		});
 	};
-
-	// This doesn't seem to impact anything on the database build via JAWSDB
-	// I beleive the user association portion covers this, leaving for now
-	// Video.associate = function(models) {
-	//   Video.belongsTo(models.User, {
-	//     foreignKey: "userId", as: "User"
-	//   });
-	// };
 
 	return Video;
 };

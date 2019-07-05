@@ -109,8 +109,8 @@ var videoInfo = [
 ];
 
 // Functions to invoke user requested action through the iFrame API
-function loadNewVideo(){
-  player.loadVideoById(document.getElementById("video_idOption").value);
+function loadNewVideo(id){
+  player.loadVideoById(document.getElementById(id).value);
 };
 function playVideo(){
   player.playVideo();
