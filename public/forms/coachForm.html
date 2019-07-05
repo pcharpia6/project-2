@@ -3,36 +3,46 @@
     <head>
         <title>Coach Review</title>
         <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Shojumaru&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../styles/formstyle.css">
     </head>
     <body>
+        <div id="form_title" class="shojumaru">
+            Coaching Review
+        </div>
         <form>
-            <div class="container">
-                <label for="username"><b>Username</b></label>
-                <input type="text" placeholder="Username" name="username" required>
-                <br>
-                <br>
-                <textarea id="Input_Text" rows="15" cols="100" placeholder="Review"></textarea>
+            <div id="inputs">
+                    <div id="userName" class="input-value">
+                        <label for = "username" class="input-label shojumaru label-tweak">User Name:</label>
+                        <input type="url" name="username" id="username" class="input-box input-insides" placeholder="Required" size="60" required>
+                    </div>
             </div>
-            Ding Bucks
-            <select>
-                <option value="" disabled selected>--DingBucks--</option>
-                <option value="5">5 DB</option>
-                <option value="4">4 DB</option>
-                <option value="3">3 DB</option>
-                <option value="2">2 DB</option>
-                <option value="1">1 DB</option>
-                <option value="0">0 DB</option>
-                <option value="-1"> -1 DB</option>
-                <option value="-2">-2 DB</option>
-                <option value="-3">-3 DB</option>
-                <option value="-4">-4 DB</option>
-                <option value="-5">-5 DB</option>
-            </select>
-        </form>
+            <div id="text">
+                <label for = "textarea" class="shojumaru text-label label-tweak">Your Review:</label>
+                <textarea id="Input_text" rows="11" cols="85" placeholder="Try to keep your feedback helpful" class="input-insides"></textarea>
+            </div>
+            <div id="selections">
+                <div id="dingBucks" class="choice-value">
+                    <label for = "dingBucks" class="shojumaru choice-label label-tweak">How many Ding Bucks should this player get?</label>
+                    <select placeholder="games" class="input-insides">
+                        <option value="" disabled selected>Tip Your Student</option>
+                        <option value="5">5 DB</option>
+                        <option value="4">4 DB</option>
+                        <option value="3">3 DB</option>
+                        <option value="2">2 DB</option>
+                        <option value="1">1 DB</option>
+                        <option value="0">0 DB</option>
+                    </select>
+                </div>     
+            </div>
+        <form>
         <script
         src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
         crossorigin="anonymous"></script>
+        <script src="../js/formtweak.js"></script>
         <script>
         // AJAX coach review submission
             $("#coach-review-submit").on("click", function(event) {

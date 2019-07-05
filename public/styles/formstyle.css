@@ -18,11 +18,13 @@
 
 body {
     background:linear-gradient(150deg, wheat,#6E1B00);
-    height: 100vh;
+    min-height: 100vh;
     width: 100vh;
     background-size: cover;
     margin: auto;
+    background-repeat: no-repeat;
 }
+
 #form_page{
     display: flex;
     flex-direction: column;
@@ -31,7 +33,7 @@ body {
     max-height: fit-content;
 }
 #form_title{
-    height: 20%;
+    height: 10%;
     text-align: center;
     font-size: 40px;
     text-decoration: underline;
@@ -46,7 +48,7 @@ body {
 }
 
 form{
-    height: 80%;
+    max-height: 90%;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -111,10 +113,6 @@ textarea{
 
 #buttons{
     height: 25%;
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 2;
     display: flex;
     flex-direction: column;
 }

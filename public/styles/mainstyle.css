@@ -18,11 +18,11 @@ body{
     top: 0px;
     height: 100vh;
     width: 100vw;
-    grid-template-rows: 10% 100%;
+    grid-template-rows: 10% 90%;
 }
 #title-bar{
     grid-row-start: 1;
-    grid-row-end: 1;
+    grid-row-end: 2;
     background-color: black;
     border: 1px double #EFE3AF;
 }
@@ -33,11 +33,9 @@ body{
     margin-left: 100%;
 }
 #title{
-    grid-row-start: 1;
-    grid-row-end: 2;
     margin-left: 5%;
 }
-#menu{
+#menu-title{
     text-align: center;
     justify-content: center;
     color: white;
@@ -45,15 +43,24 @@ body{
     display: flex;
     flex-direction: column;
 }
+
+.menu-underline{
+    border-bottom: 1px solid white;
+}
+
+.link{
+    color: white;
+    text-align: center;
+}
+
 .link:hover{
     text-shadow: 0 0 0.5em orange, 0 0 0.5em orange,
     0 0 0.5em orange;
+    transition: text-shadow .6s;
 }
 
-a{
-    text-decoration: none;
-    color: white;
-    transition: text-shadow .6s;
+.log-out{
+    display: none;
 }
 
 #main-stage{
@@ -61,7 +68,7 @@ a{
     grid-row-end: 2;
     display: grid;
     grid-template-columns: 10% 60% 10% 10% 10%;
-    grid-template-rows: 10% 75% 15%;
+    grid-template-rows: 5% 5% 75% 15%;
     background-image: url('../images/indoor-dojo-temple-vector.jpg');
     background-size: cover;
     background-position: center;
@@ -72,11 +79,25 @@ a{
     color: white;
 }
 
-#main-site{
+#video-menu{
+    color: white;
+    background-color: black;
     grid-column-start: 2;
     grid-column-end: 5;
     grid-row-start: 2;
-    grid-row-end: 3;
+    grid-row-end: 2;
+    color: white;
+    display: none;
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#main-site{
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 4;
     background-color: white;
 }
 iframe{
