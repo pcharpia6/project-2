@@ -79,7 +79,7 @@ $('.log-out').click(function(){
 function hideLoadedHtml(){
     $('#main-site').show();
     $('#loaded-html').hide();
-    $('#loaded-html').html('');
+    $('#loaded-html').html("");
 };
 //auxiliary menu click functions
 

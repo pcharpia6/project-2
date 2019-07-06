@@ -70,8 +70,11 @@
         crossorigin="anonymous"></script>
     <script src="js/gamerHomeScript.js"></script>
     <script>
-        
-        let videosArray = [];
+        if(typeof vidoesArray === undefined){
+
+        videosArray = [];
+
+        };
 
         $("#game-search-submit").on("click", function(event) {
             event.preventDefault();
@@ -92,8 +95,9 @@
         });
 
         function makeVideosArray(data) { 
+        videosArray = [];
         for (var i=0; i<=10; i++) {
-            newVideo = {
+            const newVideo = {
                 videoName: data[i].videoName,
                 videoId: data[i].id,
                 gameName: data[i].gameName,
