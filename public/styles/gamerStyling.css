@@ -30,6 +30,10 @@
     min-height:50vh;
 }
 
+#movie-selections{
+    display: none;
+}
+
 .search-videos{
     height: 50%;
     margin: 5px;
