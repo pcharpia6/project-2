@@ -35,11 +35,15 @@ $('#menu').click(function(){
 });
 
 $('.about').click(function(){
+    $('#main-site').show();
+    $('#loaded-html').hide();
     $('#video-menu').hide();
     $('#current-data').attr('src', 'aboutus.html');
 });
 
 $('.games').click(function(){
+    $('#main-site').show();
+    $('#loaded-html').hide();
     $('#video-menu').css({'display' : 'flex'});
     $('#current-data').attr('src', './topGames/popularTwitch.html');
 });
@@ -50,16 +54,22 @@ $('.home').click(function(){
 });
 
 $('.gamer-home').click(function(){
-    $('#video-menu').hide();
-    $( "#main-stage" ).load("gamerHome.html");   
+    $('#video-menu').toggle();
+    $('#main-site').toggle();
+    $('#loaded-html').show();
+    $('#loaded-html').load("gamerHome.html");   
 })
 
 $('.login').click(function(){
+    $('#main-site').show();
+    $('#loaded-html').hide();
     $('#video-menu').hide();
     $('#current-data').attr('src', './forms/loginForm.html');
 });
 
 $('.log-out').click(function(){
+    $('#main-site').show();
+    $('#loaded-html').hide();
     $('.log-out').hide();
     $('.gamer-home').hide();
     $('.login').show();
