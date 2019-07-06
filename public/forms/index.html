@@ -1,32 +1,41 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html ng-app="app">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Shojumaru&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/public/styles/loginstyle.css">
+    <link rel="stylesheet" type="text/css" href="/public/styles/formstyle.css">
+    <link rel="stylesheet" type="text/css" href="/public/styles/moviePageStyle.css">
+    <link rel="stylesheet" type="text/css" href="/public/styles/styles.css">
+
+
+
+
+    <link rel="icon" href="images/dojo.jpg" type="image/x-icon">
     <title>D!ng-su</title>
+
 </head>
 <body>
+
     <div class="jumbotron">
         <div class="container">
-            <div class="col-sm-8 col-sm-offset-2">
-                <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+            <div class="col-xs-offset-2 col-xs-8">
                 <div ng-view></div>
             </div>
         </div>
     </div>
 
-    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="//code.angularjs.org/1.6.0/angular.min.js"></script>
-    <script src="//code.angularjs.org/1.6.0/angular-route.min.js"></script>
-    <script src="//code.angularjs.org/1.6.0/angular-cookies.min.js"></script>
+    <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="//code.angularjs.org/1.2.20/angular.js"></script>
+    <script src="//code.angularjs.org/1.2.20/angular-route.js"></script>
+    <script src="//code.angularjs.org/1.2.13/angular-cookies.js"></script>
 
-    <script src="app.js"></script>
-    <script src="app/authentication.js"></script>
-    <script src="app/success.js"></script>
-
-    <script src="app/userlocal-storage.js"></script>
-
-    <script src="home/home.controller.js"></script>
-    <script src="login/login.controller.js"></script>
-    <script src="register/register.controller.js"></script>
+    <script src="./scripts/app.js"></script>
+    <script src="./modules/home/controllers.js"></script>
+    <script src="./modules/authentication/controllers.js"></script>
+    <script src="./modules/authentication/services.js"></script>
 </body>
 </html>

@@ -1,38 +1,25 @@
-﻿(function () {
-    'use strict';
+﻿'use strict';
 
-    angular
-        .module('app')
-        .factory('AuthenticationService', AuthenticationService);
+angular.module('Authentication')
 
-    AuthenticationService.$inject = ['$http', '$cookies', '$rootScope', '$timeout', 'UserService'];
-    function AuthenticationService($http, $cookies, $rootScope, $timeout, UserService) {
+.factory('AuthenticationService',
+    ['Base64', '$http', '$cookieStore', '$rootScope', '$timeout',
+    function (Base64, $http, $cookieStore, $rootScope, $timeout) {
         var service = {};
 
-        service.Login = Login;
-        service.SetCredentials = SetCredentials;
-        service.ClearCredentials = ClearCredentials;
-
-        return service;
-
-        function Login(username, password, callback) {
+        service.Login = function (username, password, callback) {
 
             $timeout(function () {
-                var response;
-                UserService.GetByUsername(username)
-                    .then(function (user) {
-                        if (user !== null && user.password === password) {
-                            response = { success: true };
-                        } else {
-                            response = { success: false, message: 'Username or password is incorrect' };
-                        }
-                        callback(response);
-                    });
+                var response = { success: username === 'test' && password === 'test' };
+                if (!response.success) {
+                    response.message = 'Username or password is incorrect';
+                }
+                callback(response);
             }, 1000);
 
-        }
+        };
 
-        function SetCredentials(username, password) {
+        service.SetCredentials = function (username, password) {
             var authdata = Base64.encode(username + ':' + password);
 
             $rootScope.globals = {
@@ -42,26 +29,24 @@
                 }
             };
 
-            // set default auth header for http requests
             $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
+            $cookieStore.put('globals', $rootScope.globals);
+        };
 
-            // store user details in globals cookie that keeps user logged in for 1 week (or until they logout)
-            var cookieExp = new Date();
-            cookieExp.setDate(cookieExp.getDate() + 7);
-            $cookies.putObject('globals', $rootScope.globals, { expires: cookieExp });
-        }
-
-        function ClearCredentials() {
+        service.ClearCredentials = function () {
             $rootScope.globals = {};
-            $cookies.remove('globals');
-            $http.defaults.headers.common.Authorization = 'Basic';
-        }
-    }
+            $cookieStore.remove('globals');
+            $http.defaults.headers.common.Authorization = 'Basic ';
+        };
 
-    var Base64 = {
+        return service;
+    }])
 
-        keyStr: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=',
+.factory('Base64', function () {
 
+    var keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+
+    return {
         encode: function (input) {
             var output = "";
             var chr1, chr2, chr3 = "";
@@ -85,10 +70,10 @@
                 }
 
                 output = output +
-                    this.keyStr.charAt(enc1) +
-                    this.keyStr.charAt(enc2) +
-                    this.keyStr.charAt(enc3) +
-                    this.keyStr.charAt(enc4);
+                    keyStr.charAt(enc1) +
+                    keyStr.charAt(enc2) +
+                    keyStr.charAt(enc3) +
+                    keyStr.charAt(enc4);
                 chr1 = chr2 = chr3 = "";
                 enc1 = enc2 = enc3 = enc4 = "";
             } while (i < input.length);
@@ -112,10 +97,10 @@
             input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
 
             do {
-                enc1 = this.keyStr.indexOf(input.charAt(i++));
-                enc2 = this.keyStr.indexOf(input.charAt(i++));
-                enc3 = this.keyStr.indexOf(input.charAt(i++));
-                enc4 = this.keyStr.indexOf(input.charAt(i++));
+                enc1 = keyStr.indexOf(input.charAt(i++));
+                enc2 = keyStr.indexOf(input.charAt(i++));
+                enc3 = keyStr.indexOf(input.charAt(i++));
+                enc4 = keyStr.indexOf(input.charAt(i++));
 
                 chr1 = (enc1 << 2) | (enc2 >> 4);
                 chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
@@ -139,4 +124,4 @@
         }
     };
 
-})();
+});
