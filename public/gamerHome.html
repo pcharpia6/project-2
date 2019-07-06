@@ -57,7 +57,7 @@
                     </div>
                 </div>
             </div>
-            <div id="submit-video" class="shojumaru label-tweak">
+            <div id="video-buttons" class="shojumaru label-tweak">
                 Submit a Video
             </div>
         </div>
@@ -73,10 +73,11 @@
         crossorigin="anonymous"></script>
     <script src="js/gamerHomeScript.js"></script>
     <script>
-        if(typeof vidoesArray === undefined){
+$( document ).ready(function() {
+    console.log( "ready!" );
 
-        videosArray = [];
-
+        if ( typeof vidoesArray === undefined ){
+            videosArray = [];
         };
 
         $("#game-search-submit").on("click", function(event) {
@@ -98,45 +99,51 @@
         });
 
         function makeVideosArray(data) { 
-        videosArray = [];
-        for (var i=0; i<=10; i++) {
-            const newVideo = {
-                videoName: data[i].videoName,
-                videoId: data[i].id,
-                gameName: data[i].gameName,
-                contributorName: data[i].userId,
-                videoUrl: data[i].videoUrl,
-                requestTypes: function() {
-                    let reqTypes;
-                    if (data[i].coachRequest === 0) {
-                        reqTypes += "Coach Request, "
-                    };
-                    if (data[i].dontBeLikeMe === 0) {
-                        reqTypes += "Fails, "
-                    };
-                    if (data[i].Brag === 0) {
-                        reqTypes += "Brag, "
-                    };
-                    if (data[i].contributorFeedback === 0) {
-                        reqTypes += "Contributor Feedback"
-                    };
-                    return reqTypes;
+            videosArray = [];
+            for (var i=0; i<data.length; i++) {
+                newVideo = {
+                    videoName: data[i].videoName,
+                    videoId: data[i].id,
+                    gameName: data[i].gameName,
+                    contributorName: data[i].userId,
+                    videoUrl: data[i].videoUrl,
+                    coachRequest: data[i].coachRequest,
+                    dontBeLikeMe: data[i].dontBeLikeMe,
+                    Brag: data[i].Brag,
+                    contributorFeedback: data[i].contributorFeedback
                 }
-            }
-            videosArray.push(newVideo);
+                videosArray.push(newVideo);
+                console.log(videosArray);
         };
         pushVideosArrayHTML();
     };
     
     function pushVideosArrayHTML() {
+        function requestTypes() {
+                        let reqTypes;
+                        if (videosArray[i].coachRequest === true) {
+                            reqTypes += "Coach Request, "
+                        };
+                        if (videosArray[i].dontBeLikeMe === true) {
+                            reqTypes += "Fails, "
+                        };
+                        if (videosArray[i].Brag === true) {
+                            reqTypes += "Brag, "
+                        };
+                        if (videosArray[i].contributorFeedback === true) {
+                            reqTypes += "Contributor Feedback"
+                        };
+                        return reqTypes;
+                    }
+        console.log(videosArray.length);
         for (i=0; i<videosArray.length; i++){
-            var newButton = $( "<div class='button video-button>" );
-            newButton.attr( "videoId", videoId );
-            newButton.attr( "url", videoUrl );  
+            var newButton = $( "<div class='button video-button'>" );
+            newButton.attr( "videoId", videosArray[i].videoId );
+            newButton.attr( "url", videosArray[i].videoUrl );  
             newButton.append( $( "<h5 class='video-name'>" ).text( videosArray[i].videoName ));
             newButton.append( $( "<p>" ).text( videosArray[i].gameName ));
             newButton.append( $( "<p>" ).text( videosArray[i].contributorName ));
-            newButton.append( $( "<p>" ).text( videosArray[i].requestTypes() ));
+            newButton.append( $( "<p>" ).text( requestTypes() ));
             $("#video-buttons").append( newButton );
         }
         videosArray = [];
@@ -165,7 +172,7 @@
         };
     });
     });
-
+});
     </script>
 </body>
 </html>

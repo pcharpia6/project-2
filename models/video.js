@@ -31,16 +31,20 @@ module.exports = function(sequelize, DataTypes) {
 			}
 		},
 		coachRequest: {
-			type: DataTypes.BOOLEAN
+			type: DataTypes.BOOLEAN,
+			default: false
 		},
 		dontBeLikeMe: {
-			type: DataTypes.BOOLEAN
+			type: DataTypes.BOOLEAN,
+			default: false
 		},
 		Brag: {
-			type: DataTypes.BOOLEAN
+			type: DataTypes.BOOLEAN,
+			default: false
 		},
 		contributorFeedback: {
-			type: DataTypes.BOOLEAN
+			type: DataTypes.BOOLEAN,
+			default: false
 		}
 	});
 
