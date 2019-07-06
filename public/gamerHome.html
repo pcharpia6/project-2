@@ -93,23 +93,23 @@
         function makeVideosArray(data) { 
         for (var i=0; i<=10; i++) {
             newVideo = {
-                videoName: data[i].Video.videoName,
-                videoId: data[i].Video.id,
-                gameName: data[i].Video.ganeName,
-                contributorName: data[i].Video.userId,
-                videoUrl: data[i].Video.videoUrl,
+                videoName: data[i].videoName,
+                videoId: data[i].id,
+                gameName: data[i].gameName,
+                contributorName: data[i].userId,
+                videoUrl: data[i].videoUrl,
                 requestTypes: function() {
                     let reqTypes;
-                    if (data[i].Video.coachRequest === 0) {
+                    if (data[i].coachRequest === 0) {
                         reqTypes += "Coach Request, "
                     };
-                    if (data[i].Video.dontBeLikeMe === 0) {
+                    if (data[i].dontBeLikeMe === 0) {
                         reqTypes += "Fails, "
                     };
-                    if (data[i].Video.Brag === 0) {
+                    if (data[i].Brag === 0) {
                         reqTypes += "Brag, "
                     };
-                    if (data[i].Video.contributorFeedback === 0) {
+                    if (data[i].contributorFeedback === 0) {
                         reqTypes += "Contributor Feedback"
                     };
                     return reqTypes;
