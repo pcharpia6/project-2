@@ -35,15 +35,13 @@ $('#menu').click(function(){
 });
 
 $('.about').click(function(){
-    $('#main-site').show();
-    $('#loaded-html').hide();
+    hideLoadedHtml();
     $('#video-menu').hide();
     $('#current-data').attr('src', 'aboutus.html');
 });
 
 $('.games').click(function(){
-    $('#main-site').show();
-    $('#loaded-html').hide();
+    hideLoadedHtml();
     $('#video-menu').css({'display' : 'flex'});
     $('#current-data').attr('src', './topGames/popularTwitch.html');
 });
@@ -54,22 +52,20 @@ $('.home').click(function(){
 });
 
 $('.gamer-home').click(function(){
-    $('#video-menu').toggle();
-    $('#main-site').toggle();
+    $('#video-menu').hide();
+    $('#main-site').hide();
     $('#loaded-html').show();
-    $('#loaded-html').load("gamerHome.html");   
+    $('#loaded-html').load("gamerHome.html");
+     
 })
 
 $('.login').click(function(){
-    $('#main-site').show();
-    $('#loaded-html').hide();
+    hideLoadedHtml();
     $('#video-menu').hide();
     $('#current-data').attr('src', './forms/loginForm.html');
 });
 
 $('.log-out').click(function(){
-    $('#main-site').show();
-    $('#loaded-html').hide();
     $('.log-out').hide();
     $('.gamer-home').hide();
     $('.login').show();
@@ -80,6 +76,11 @@ $('.log-out').click(function(){
     localStorage.setItem('users', userName);
 });
 
+function hideLoadedHtml(){
+    $('#main-site').show();
+    $('#loaded-html').hide();
+    $('#loaded-html').html('');
+};
 //auxiliary menu click functions
 
 $('.coach').click(function(){
