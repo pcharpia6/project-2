@@ -7,7 +7,6 @@ $('.modal-button').click(function(e){
     }
     else{
         userName = "login";
-        //userName = "testing";
         $('#myModal').fadeOut(slideOpen());
     }
     localStorage.setItem('users', userName);
