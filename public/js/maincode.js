@@ -43,7 +43,7 @@ $('.about').click(function(){
 $('.games').click(function(){
     hideLoadedHtml();
     $('#video-menu').css({'display' : 'flex'});
-    $('#current-data').attr('src', './topGames/popularTwitch.html');
+    $('#current-data').attr('src', './topGames/twitch.html');
 });
 
 $('.home').click(function(){
