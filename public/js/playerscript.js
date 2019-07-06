@@ -39,7 +39,7 @@ function onApiChange(event){
 function onPlayerReady(){
   // Update page after player is ready
   updateAll();
-  //playVideo();
+  playVideo();
 }
 
 function onPlayerStateChange(event){
@@ -75,37 +75,22 @@ function update(node){
       break;
     case "url":
       var url = player.getVideoUrl();
-      var container = document.getElementById("url");
-      if (container != null){
-        container.innerHTML = "<a href=\""+url+"\" target=\"_blank\">"+url+"</a>";
-      }
+      document.getElementById("url").innerHTML = "<a href=\""+url+"\" target=\"_blank\">"+url+"</a>";
       break;
     case "embedCode":
       var embedCode = player.getVideoEmbedCode();
       var index = Math.ceil(embedCode.length/3);
       var fmtEmbedCode = [embedCode.slice(0, index), "\n", embedCode.slice(index, index*2),"\n", embedCode.slice(index*2)].join('');
-      var container = document.getElementById("embedCode");
-      if (container != null){
-        container.innerText = fmtEmbedCode;
-      }
+      document.getElementById("embedCode").innerText = fmtEmbedCode
       break;
     case "title":
-      var container = document.getElementById("title");
-      if (container != null){
-        container.innerHTML = player.getVideoData()["title"];
-      }
+      document.getElementById("title").innerHTML = player.getVideoData()["title"]
       break;
     case "author":
-      var container = document.getElementById("author");
-      if (container != null){
-        container.innerHTML = player.getVideoData()["author"]
-      }
+      document.getElementById("author").innerHTML = player.getVideoData()["author"]
       break;
     case "video_id":
-      var container = document.getElementById("video_id");
-      if (container != null){
-        container.innerHTML = player.getVideoData()["video_id"];
-      }
+      document.getElementById("video_id").innerHTML = player.getVideoData()["video_id"]
       break;
   }
 };
