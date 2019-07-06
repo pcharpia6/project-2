@@ -74,7 +74,6 @@
     <script src="js/gamerHomeScript.js"></script>
     <script>
 $( document ).ready(function() {
-    console.log( "ready!" );
 
         if ( typeof vidoesArray === undefined ){
             videosArray = [];
@@ -137,21 +136,18 @@ $( document ).ready(function() {
                     }
         console.log(videosArray.length);
         for (i=0; i<videosArray.length; i++){
-            var newButton = $( "<div class='button video-button'>" );
+            var id=(videosArray[i].videoUrl).slice(-11).toString();
+            var newButton = $( "<div class='button video-button' onClick='loadNewVideo("+'"'+id+'"'+")'>" );
             newButton.attr( "videoId", videosArray[i].videoId );
             newButton.attr( "url", videosArray[i].videoUrl );  
             newButton.append( $( "<h3 class='video-name'>" ).text( videosArray[i].videoName ));
             newButton.append( $( "<p>" ).text( videosArray[i].gameName ));
             newButton.append( $( "<p>" ).text( videosArray[i].contributorName ));
             newButton.append( $( "<p>" ).text( requestTypes() ));
-            $("#video-buttons").append( newButton );
+            $("#movie-selections").append( newButton );
         }
         videosArray = [];
     };
-    $(".video-button").click( function loadNewVideo(){
-        let id = $this.attr("url").slice(-11);
-        player.loadVideoById(document.getElementById(id).value);
-    });
 
 });
     </script>

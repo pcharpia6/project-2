@@ -110,7 +110,8 @@ var videoInfo = [
 
 // Functions to invoke user requested action through the iFrame API
 function loadNewVideo(id){
-  player.loadVideoById(document.getElementById(id).value);
+  console.log(id);
+  player.loadVideoById(id);
 };
 function playVideo(){
   player.playVideo();
