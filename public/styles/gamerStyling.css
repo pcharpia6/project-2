@@ -32,11 +32,17 @@
 
 #movie-selections{
     display: none;
+    height: 45%;
 }
 
 .search-videos{
     height: 50%;
     margin: 5px;
+}
+
+#search-button{
+    display: none;
+    height: 5%;
 }
 
 #submit-video{
