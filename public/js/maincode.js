@@ -51,7 +51,9 @@ $('.home').click(function(){
 
 $('.gamer-home').click(function(){
     $('#video-menu').hide();
-    $( "#main-stage" ).load("gamerHome.html");   
+    $('#main-site').toggle();
+    $('#loaded-html').show();
+    $('#loaded-html').load("gamerHome.html");   
 })
 
 $('.login').click(function(){
