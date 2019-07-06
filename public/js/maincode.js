@@ -7,7 +7,7 @@ $(document).ready(function() {
         $('.login').html('Register/Login');
     }
     else if(userName === "login"){
-        $('#current-data').attr('src', './forms/login/loginForm.html');   
+        $('#current-data').attr('src', './forms/index.html');   
     }
     else{
         $('#current-data').attr('src', './videoplayer.html');
@@ -61,7 +61,7 @@ $('.gamer-home').click(function(){
 $('.login').click(function(){
     hideLoadedHtml();
     $('#video-menu').hide();
-    $('#current-data').attr('src', './forms/loginForm.html');
+    $('#current-data').attr('src', './forms/index.html');
 });
 
 $('.log-out').click(function(){
