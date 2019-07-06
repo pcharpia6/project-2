@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
   var app = angular.module("topGames", []);
-
+  
   app.controller("twitch", ["$scope", "$http", function ($scope, $http) {
 
     $scope.games;
