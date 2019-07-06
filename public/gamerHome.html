@@ -57,9 +57,6 @@
                     </div>
                 </div>
             </div>
-            <div id="video-buttons" class="shojumaru label-tweak">
-                Submit a Video
-            </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -83,7 +80,6 @@ $( document ).ready(function() {
             event.preventDefault();
 
             $.get("/api/gameName/"+$("#game-name").val().trim())
-
                 .then(function(data) {
                     makeVideosArray(data);
                 });
