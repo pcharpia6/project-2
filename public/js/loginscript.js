@@ -2,7 +2,8 @@ var userName = "";
 
 $('.modal-button').click(function(e){
     if (this.id === 'guest'){
-        userName = "guest";
+        userName = "test";
+        //userName = "guest";
         $('#myModal').fadeOut(slideOpen());       
     }
     else{
