@@ -30,6 +30,10 @@
     min-height:50vh;
 }
 
+#movie-selections{
+    display: none;
+}
+
 .search-videos{
     height: 50%;
     margin: 5px;
@@ -38,4 +42,13 @@
 #submit-video{
     height: 50%;
     margin: 5px;
+}
+
+.choice-values{
+    transform: translate(-50%, -50%);
+    transform-origin: center center;
+}
+
+#inputs{
+    height: 50%;
 }
