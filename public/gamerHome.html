@@ -70,6 +70,8 @@
         crossorigin="anonymous"></script>
     <script src="js/gamerHomeScript.js"></script>
     <script>
+$( document ).ready(function() {
+    console.log( "ready!" );
 
         if ( typeof vidoesArray === undefined ){
             videosArray = [];
@@ -108,6 +110,7 @@
                     contributorFeedback: data[i].contributorFeedback
                 }
                 videosArray.push(newVideo);
+                console.log(videosArray);
         };
         pushVideosArrayHTML();
     };
@@ -131,7 +134,7 @@
                     }
         console.log(videosArray.length);
         for (i=0; i<videosArray.length; i++){
-            var newButton = $( "<div class='button video-button>" );
+            var newButton = $( "<div class='button video-button'>" );
             newButton.attr( "videoId", videosArray[i].videoId );
             newButton.attr( "url", videosArray[i].videoUrl );  
             newButton.append( $( "<h5 class='video-name'>" ).text( videosArray[i].videoName ));
@@ -166,7 +169,7 @@
         };
     });
     });
-
+});
     </script>
 </body>
 </html>
