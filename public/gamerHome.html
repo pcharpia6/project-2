@@ -78,6 +78,7 @@
             $.get("/api/gameName/"+$("#game-name").val().trim())
 
                 .then(function(data) {
+                    console.log(JSON.stringify(data));
                     makeVideosArray(data);
                 });
         });
