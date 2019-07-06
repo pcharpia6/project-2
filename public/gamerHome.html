@@ -140,7 +140,7 @@ $( document ).ready(function() {
             var newButton = $( "<div class='button video-button'>" );
             newButton.attr( "videoId", videosArray[i].videoId );
             newButton.attr( "url", videosArray[i].videoUrl );  
-            newButton.append( $( "<h5 class='video-name'>" ).text( videosArray[i].videoName ));
+            newButton.append( $( "<h3 class='video-name'>" ).text( videosArray[i].videoName ));
             newButton.append( $( "<p>" ).text( videosArray[i].gameName ));
             newButton.append( $( "<p>" ).text( videosArray[i].contributorName ));
             newButton.append( $( "<p>" ).text( requestTypes() ));
@@ -148,30 +148,11 @@ $( document ).ready(function() {
         }
         videosArray = [];
     };
-
-    $(function() {
-    $("#game-name").change(function() {
-        if ($(this).val() === true) {
-            $("#genre").prop("disabled", true);
-            $("#genre-search-submit").prop("disabled", true);
-        } else {
-            $("#genre").prop("disabled", false);
-            $("#genre-search-submit").prop("disabled", false);
-        };
-    });
+    $(".video-button").click( function loadNewVideo(){
+        let id = $this.attr("url").slice(-11);
+        player.loadVideoById(document.getElementById(id).value);
     });
 
-    $(function(){
-    $("#genre").change(function(){
-        if ($(this).val() === true) {
-            $("#game-name").prop("disabled", true);
-            $("#game-search-submit").prop("disabled", true);
-        } else {
-            $("#game-name").prop("disabled",false);
-            $("#game-search-submit").prop("disabled",false);
-        };
-    });
-    });
 });
     </script>
 </body>
