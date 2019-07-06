@@ -33,7 +33,7 @@
 #movie-selections{
     display: none;
     overflow-y: scroll;
-    height: 45%;
+    height: 100px;
 }
 
 .search-videos{
