@@ -86,5 +86,5 @@ $('.video').click(function(){
 });
 
 $('.search').click(function(){
-    $('#current-data').attr('src', './forms/gamerHome.html');
+    $('#current-data').attr('src', './gamerHome.html');
 });
