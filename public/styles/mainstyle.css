@@ -71,7 +71,7 @@ body{
     grid-row-start: 2;
     grid-row-end: 2;
     display: grid;
-    grid-template-columns: 10% 60% 10% 10% 10%;
+    grid-template-columns: 5% 5% 60% 10% 10% 10%;
     grid-template-rows: 5% 5% 75% 15%;
     background-image: url('../images/indoor-dojo-temple-vector.jpg');
     background-size: cover;
@@ -98,11 +98,19 @@ body{
 }
 
 #main-site{
-    grid-column-start: 2;
-    grid-column-end: 5;
+    grid-column-start: 3;
+    grid-column-end: 6;
     grid-row-start: 3;
     grid-row-end: 4;
     background-color: white;
+}
+
+#loaded-html{
+    display: none;
+    grid-column-start: 2;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 4;
 }
 
 iframe{

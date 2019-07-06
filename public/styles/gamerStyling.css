@@ -2,8 +2,8 @@
 #page-content{
     display: grid;
     top: 0px;
-    height: 100vh;
-    width: 100vw;
+    max-height: 100vh;
+    max-width: 100vw;
     grid-template-columns: 70% 30%;    
     grid-template-rows: 5% 90% 5%;
 }
@@ -16,7 +16,7 @@
     text-align: center;
     width: 85%;
     padding: 5%;
-    height: 50%;
+    height: 80%;
 }
 
 #page-choices{
@@ -42,6 +42,12 @@
 #submit-video{
     height: 50%;
     margin: 5px;
+}
+
+#submit-video:hover{
+    text-shadow: 0 0 0.5em orange, 0 0 0.5em orange,
+    0 0 0.5em orange;
+    transition: text-shadow .6s;
 }
 
 .choice-values{
