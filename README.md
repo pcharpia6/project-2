@@ -13,26 +13,23 @@ Joshua
 
 
 What is this?
-lorum ipsum
+This app uses YouTube API to view videos provided by users as links.
+The goal is reviews of hosted videos by gaming professionals to provide coaching feedback to community posters.
 
 API's, New Tech
 This project utilizes:
-* 
-* 
-* 
-* 
-* 
-* 
+* Youtube API
+* Twitch API
+* Node.js
+* mySQL
 
 Who did what?
 
-Philip:
+Philip: SQL, Forms, Models, Routes
 
-Joshua:
+Suraj: Twitch API, Front-End
 
-Suraj:
-
-Katie:
+Katie: Youtube API, Front-End
 
 ### Walkthrough
 
@@ -136,6 +133,3 @@ Katie:
 5. Contributor Coach Review
 6. Search
 7. User
-
-### Javascript
-1. 
